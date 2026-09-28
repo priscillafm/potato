@@ -60,12 +60,19 @@ Deno.serve(async (req) => {
 
     const { data: plan } = await userClient
       .from('plans')
-      .select('id, name, price_monthly_uyu, promo_price_monthly_uyu')
+      .select('id, name, price_monthly_uyu, promo_price_monthly_uyu, price_monthly_usd, promo_price_monthly_usd')
       .eq('id', plan_id)
       .single()
     if (!plan) return json({ error: 'Plan no encontrado' }, 404)
 
-    const amount = plan.promo_price_monthly_uyu ?? plan.price_monthly_uyu
+    // El precio público está en dólares; se cobra en pesos uruguayos con la cotización
+    // que el superadmin define en app_settings. Si el plan no tiene precio en USD, se usa el de pesos.
+    const usdPrice = plan.promo_price_monthly_usd ?? plan.price_monthly_usd
+    const { data: rateRow } = await userClient.from('app_settings').select('value').eq('key', 'usd_uyu_rate').maybeSingle()
+    const rate = Number(rateRow?.value) > 0 ? Number(rateRow?.value) : 40
+    const amount = usdPrice
+      ? Math.round(Number(usdPrice) * rate)
+      : (plan.promo_price_monthly_uyu ?? plan.price_monthly_uyu)
     if (!amount) return json({ error: 'Este plan no tiene un precio configurado' }, 400)
 
     // Mercado Pago exige que back_urls sean https públicas para poder usar
@@ -86,7 +93,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         items: [{
-          title: `Potato — Plan ${plan.name}`,
+          title: `Potato — Plan ${plan.name}${usdPrice ? ` (US$ ${usdPrice}/mes)` : ''}`,
           quantity: 1,
           currency_id: 'UYU',
           unit_price: amount,
@@ -116,7 +123,7 @@ Deno.serve(async (req) => {
       company_id,
       plan_id,
       status: 'trialing',
-      metadata: { last_preference_id: mpData.id, external_reference: externalReference },
+      metadata: { last_preference_id: mpData.id, external_reference: externalReference, usd_price: usdPrice ?? null, usd_uyu_rate: rate, amount_uyu: amount },
     }, { onConflict: 'company_id' })
 
     return json({ init_point: mpData.init_point })

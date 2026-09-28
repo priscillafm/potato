@@ -100,6 +100,50 @@ export default function SuperAdmin() {
   )
 }
 
+// ── Cotización del dólar que se usa al cobrar en pesos ──
+function RateCard() {
+  const qc = useQueryClient()
+  const { data: rate } = useQuery({
+    queryKey: ['usd-rate'],
+    queryFn: async () => {
+      const { data } = await supabase.from('app_settings').select('value').eq('key', 'usd_uyu_rate').maybeSingle()
+      return Number(data?.value) || 40
+    },
+  })
+  const [value, setValue] = useState('')
+  const [msg, setMsg] = useState('')
+  const current = value === '' ? (rate ?? '') : value
+  const parsed = Number(current)
+
+  async function save() {
+    if (!(parsed > 0)) { setMsg('Ingresá una cotización válida.'); return }
+    const { error } = await supabase.from('app_settings').upsert({ key: 'usd_uyu_rate', value: String(parsed), updated_at: new Date().toISOString() })
+    if (error) { setMsg('No se pudo guardar: ' + error.message); return }
+    setMsg('Guardado. Los próximos cobros usan esta cotización.')
+    setValue('')
+    qc.invalidateQueries({ queryKey: ['usd-rate'] })
+  }
+
+  return (
+    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, padding: '14px 18px', marginBottom: 24 }}>
+      <div style={{ fontSize: 11, color: 'var(--text3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 8 }}>Cotización del dólar para cobrar</div>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+        <span style={{ fontSize: 13 }}>1 US$ =</span>
+        <input type="number" min="1" step="0.01" value={current} onChange={e => { setValue(e.target.value); setMsg('') }}
+          style={{ width: 90, padding: '7px 10px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 8, color: 'var(--text)', fontSize: 14, outline: 'none' }} />
+        <span style={{ fontSize: 13 }}>pesos uruguayos</span>
+        <button onClick={save} style={{ padding: '7px 16px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>Guardar</button>
+      </div>
+      {parsed > 0 && (
+        <p style={{ fontSize: 12, color: 'var(--text3)', marginTop: 8 }}>
+          Con esta cotización, US$ 15 se cobran como $ {Math.round(15 * parsed)} y US$ 30 como $ {Math.round(30 * parsed)}. Actualizala cuando el dólar se mueva.
+        </p>
+      )}
+      {msg && <p style={{ fontSize: 12, color: msg.startsWith('Guardado') ? 'var(--success)' : 'var(--danger)', marginTop: 6 }}>{msg}</p>}
+    </div>
+  )
+}
+
 // ── Resumen: números clave, embudo de activación y oportunidades de mejora ──
 function Overview({ companies, support }) {
   const total = companies.length
@@ -138,6 +182,7 @@ function Overview({ companies, support }) {
 
   return (
     <>
+      <RateCard />
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 12, marginBottom: 24 }}>
         {[
           { label: 'Empresas', value: total, sub: recent + ' nuevas en 7 días' },

@@ -10,7 +10,7 @@ export function usePlans() {
     queryFn: async () => {
       const { data } = await supabase
         .from('plans')
-        .select('id, name, display_name, price_monthly_uyu, promo_price_monthly_uyu, promo_label, limits')
+        .select('id, name, display_name, price_monthly_uyu, promo_price_monthly_uyu, price_monthly_usd, promo_price_monthly_usd, promo_label, limits')
         .eq('is_public', true)
       const rows = data ?? []
       return ORDER.map(name => rows.find(r => r.name === name)).filter(Boolean)

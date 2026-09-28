@@ -25,7 +25,7 @@ export default function Terms() {
 
       <h2 style={h2}>3. Planes pagos</h2>
       <p>
-        Los planes pagos se cobran mensualmente a través de Mercado Pago, en pesos uruguayos. Podés
+        Los precios se muestran en dólares estadounidenses (US$). Los planes pagos se cobran mensualmente a través de Mercado Pago, en pesos uruguayos, al tipo de cambio vigente al momento del pago. Podés
         cancelar tu suscripción cuando quieras; el acceso al plan pago continúa hasta el fin del período
         ya abonado. Los precios de lanzamiento son temporales y pueden ajustarse con aviso previo.
       </p>

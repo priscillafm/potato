@@ -57,6 +57,12 @@ WHERE e.id = 'ID_DE_LA_SINCRONIZACION' AND d.execution_id = e.id AND d.change_ty
 - **Corrección:** el panel izquierdo suma una entrada "Sin marca" (solo si hay al menos un producto sin marca) que filtra por `brand_id is null`, igual que ya hacía el PDF al agrupar el borrador.
 - **De paso:** el estado vacío del armador ahora distingue "no cargaste ningún producto todavía" (con botones directos a Productos e Importar) de "elegí una marca para empezar" (cuando ya hay productos pero ninguno seleccionado) — antes mostraba siempre el mismo texto de instrucciones sin mirar si la cuenta tenía productos o no.
 
+## Precios solo en dólares (28 de septiembre)
+- **Pedido:** mostrar únicamente precios en USD (sacar los $590 uruguayos), que la gente pueda pagar en dólares o pesos, con la cotización editable.
+- **Cómo quedó:** migración 008 agrega `price_monthly_usd` / `promo_price_monthly_usd` a `plans` (Pro: US$ 30, promo US$ 15) y la tabla `app_settings` (lectura pública, escritura solo superadmin) con `usd_uyu_rate` (inicial 40). La función `mp-create-preference` cobra `precio USD × cotización` en pesos y guarda en la suscripción el precio USD, la cotización y el monto en pesos. La cotización se edita en `/admin/super` → Resumen. Términos y Condiciones y las tarjetas de precios aclaran que el pago se procesa en pesos.
+- **Límite honesto:** Mercado Pago Uruguay cobra solo en pesos; quien paga desde afuera lo hace con su tarjeta y el banco convierte. Cobrar realmente en dólares implicaría otro proveedor (PayPal, Lemon Squeezy, Paddle; verificar que puedan pagar a Uruguay). Stripe no está disponible para cuentas uruguayas hasta donde se sabe.
+- **Terminar la promo sin tocar código:** `UPDATE plans SET promo_price_monthly_usd = NULL WHERE name = 'pro';`
+
 ## Cómo seguir desde otra computadora
 Clonar el repositorio, crear el archivo `.env` con las dos variables públicas de Supabase y abrir Claude Code en la carpeta: lee `CLAUDE.md` (reglas y método de trabajo) y este historial. La conversación textual no se guarda en el repositorio porque contiene claves; este archivo y `CLAUDE.md` resumen lo importante sin datos sensibles.
 
