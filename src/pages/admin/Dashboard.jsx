@@ -164,10 +164,10 @@ export default function Dashboard() {
 
       {/* Stat cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 12, marginBottom: 24 }}>
-        <StatCard label="Productos" value={stats?.products ?? '—'} sub={limits.max_products ? `de ${limits.max_products} disponibles` : 'sin límite'} icon="products" onClick={() => navigate('/admin/products')} />
-        <StatCard label="Marcas" value={stats?.brands ?? '—'} icon="brands" onClick={() => navigate('/admin/brands')} />
-        <StatCard label="Catálogos" value={stats?.catalogs ?? '—'} sub={`${stats?.sharedCatalogs ?? 0} activos`} icon="document" onClick={() => navigate('/catalogs')} />
-        <StatCard label="Vistas este mes" value={viewsThisMonth} sub="1 por dispositivo cada 30 min" icon="view" accent />
+        <StatCard label="Productos" value={stats?.products ?? '—'} sub={limits.max_products ? `de ${limits.max_products} disponibles` : 'sin límite'} icon="products" color="var(--flame)" onClick={() => navigate('/admin/products')} />
+        <StatCard label="Marcas" value={stats?.brands ?? '—'} icon="brands" color="var(--indigo)" onClick={() => navigate('/admin/brands')} />
+        <StatCard label="Catálogos" value={stats?.catalogs ?? '—'} sub={`${stats?.sharedCatalogs ?? 0} activos`} icon="document" color="var(--violet)" onClick={() => navigate('/catalogs')} />
+        <StatCard label="Vistas este mes" value={viewsThisMonth} sub="1 por dispositivo cada 30 min" icon="view" color="var(--magenta)" />
       </div>
 
       {/* Plan usage */}
@@ -258,7 +258,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                  <div style={{ fontSize: 19, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: cat.viewCount > 0 ? 'var(--accent)' : 'var(--text3)' }}>
+                  <div style={{ fontSize: 19, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: cat.viewCount > 0 ? 'var(--accent-ink)' : 'var(--text3)' }}>
                     {cat.viewCount}
                   </div>
                   <div style={{ fontSize: 11, color: 'var(--text3)' }}>vista{cat.viewCount !== 1 ? 's' : ''}</div>
@@ -285,24 +285,28 @@ export default function Dashboard() {
   )
 }
 
-function StatCard({ label, value, sub, icon, accent, onClick }) {
+// Bloque de color con texto blanco: los colores de --flame/--indigo/--violet/--magenta
+// son oscuros a propósito para que el blanco se lea bien.
+function StatCard({ label, value, sub, icon, color, onClick }) {
   return (
     <div onClick={onClick} style={{
-      background: 'var(--surface)', border: '1px solid var(--border)',
+      background: color, color: '#fff',
       borderRadius: 12, padding: '16px 18px', cursor: onClick ? 'pointer' : 'default',
-      transition: 'border-color 0.15s, transform 0.15s',
+      position: 'relative', overflow: 'hidden',
+      transition: 'transform 0.15s, filter 0.15s',
     }}
-      onMouseEnter={e => { if (onClick) { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(-1px)' } }}
-      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)' }}
+      onMouseEnter={e => { if (onClick) { e.currentTarget.style.filter = 'brightness(1.08)'; e.currentTarget.style.transform = 'translateY(-2px)' } }}
+      onMouseLeave={e => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.transform = 'translateY(0)' }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10 }}>
-        <Icon name={icon} size={15} color="var(--text3)" />
-        <span style={{ fontSize: 12, color: 'var(--text3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</span>
+        <Icon name={icon} size={15} color="#fff" />
+        <span style={{ fontSize: 13, fontWeight: 600 }}>{label}</span>
       </div>
-      <div style={{ fontSize: 33, fontWeight: 700, fontVariantNumeric: 'tabular-nums', lineHeight: 1, color: accent ? 'var(--accent)' : 'var(--text)' }}>
+      <div style={{ fontSize: 33, fontWeight: 700, fontVariantNumeric: 'tabular-nums', lineHeight: 1, letterSpacing: '-0.02em' }}>
         {value}
       </div>
-      {sub && <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 6 }}>{sub}</div>}
+      {sub && <div style={{ fontSize: 12, opacity: 0.85, marginTop: 6 }}>{sub}</div>}
+      <span aria-hidden style={{ position: 'absolute', right: -10, bottom: -10, width: 48, height: 48, borderRadius: 8, background: 'rgba(255,255,255,0.18)', transform: 'rotate(25deg)' }} />
     </div>
   )
 }
@@ -359,6 +363,6 @@ function timeAgo(date) {
 }
 
 const linkBtn = {
-  background: 'none', border: 'none', color: 'var(--accent)',
+  background: 'none', border: 'none', color: 'var(--accent-ink)',
   fontSize: 13, cursor: 'pointer', fontWeight: 600, padding: 0,
 }

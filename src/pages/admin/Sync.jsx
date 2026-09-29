@@ -241,7 +241,7 @@ export default function Sync() {
                   const cs = CHANGE_COLORS[row.change_type] ?? CHANGE_COLORS.no_change
                   return (
                     <tr key={i} style={{ opacity: row.excluded ? 0.4 : 1 }}>
-                      <td style={td}><code style={{ fontSize: 12, color: 'var(--accent)' }}>{row.sku}</code></td>
+                      <td style={td}><code style={{ fontSize: 12, color: 'var(--accent-ink)' }}>{row.sku}</code></td>
                       <td style={td}>{row.new_data?.name ?? row.old_data?.name ?? '—'}</td>
                       <td style={td}>
                         <span style={{ padding: '2px 8px', borderRadius: 8, fontSize: 12, fontWeight: 600, background: cs.bg, color: cs.text }}>

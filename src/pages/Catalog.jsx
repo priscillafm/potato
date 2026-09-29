@@ -8,6 +8,7 @@ import { signOut } from '@/lib/auth'
 import PDFPreviewModal from '@/components/PDFPreviewModal'
 import { PotatoMark } from '@/components/PotatoLogo'
 import NotificationBell from '@/components/NotificationBell'
+import { THEME_KEY } from '@/lib/theme'
 
 function useIsMobile() {
   const [mobile, setMobile] = useState(() => window.innerWidth < 768)
@@ -20,10 +21,10 @@ function useIsMobile() {
 }
 
 function useTheme() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') ?? 'dark')
+  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') ?? 'light')
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
+    try { localStorage.setItem(THEME_KEY, theme) } catch { /* sin localStorage: el tema dura la sesión */ }
   }, [theme])
   const toggle = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
   return { theme, toggle }
@@ -473,7 +474,7 @@ function ProductCard({ product, selected, brandColor, onClick, isMobile }) {
         <div style={{
           display: 'inline-block', padding: '3px 9px', borderRadius: 999,
           fontSize: 10, fontWeight: 600, letterSpacing: '0.04em',
-          background: brandColor ?? 'var(--accent)', color: '#fff',
+          background: brandColor ?? 'var(--accent)', color: brandColor ? '#fff' : 'var(--accent-text)',
         }}>
           {product.sku}
         </div>
@@ -541,7 +542,7 @@ function CatalogInstructions({ isMobile }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: isMobile ? 'flex-start' : 'center', height: '100%', minHeight: 240, padding: isMobile ? '24px 4px 0' : '0 48px' }}>
       <div style={{ maxWidth: 480, width: '100%' }}>
-        <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: isMobile ? 16 : 20 }}>
+        <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent-ink)', marginBottom: isMobile ? 16 : 20 }}>
           {isMobile ? 'Tocá una marca para empezar' : 'Cómo armar tu catálogo'}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

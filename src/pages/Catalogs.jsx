@@ -83,7 +83,7 @@ export default function CatalogsPage() {
   const STATUS = {
     draft:     { label: 'Borrador',  color: 'var(--text3)' },
     generated: { label: 'Generado', color: 'var(--success)' },
-    shared:    { label: 'Compartido', color: 'var(--accent)' },
+    shared:    { label: 'Compartido', color: 'var(--accent-ink)' },
   }
 
   return (
@@ -151,7 +151,7 @@ export default function CatalogsPage() {
               </button>
               {!canAddCatalog && (
                 <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 4 }}>
-                  {usage.catalogs_active}/{limits.max_catalogs_active} activos — <Link to="/pricing" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Actualizar plan</Link>
+                  {usage.catalogs_active}/{limits.max_catalogs_active} activos — <Link to="/pricing" style={{ color: 'var(--accent-ink)', textDecoration: 'none' }}>Actualizar plan</Link>
                 </div>
               )}
             </div>
@@ -204,7 +204,7 @@ export default function CatalogsPage() {
                           {brandNames.length > 0 && <span>{brandNames.join(' · ')}</span>}
                           <span>{new Date(cat.updated_at).toLocaleDateString('es-AR', { day: '2-digit', month: 'short', year: 'numeric' })}</span>
                           {viewCount > 0 && (
-                            <span style={{ color: 'var(--accent)' }}>
+                            <span style={{ color: 'var(--accent-ink)' }}>
                                 <Icon name="view" size={12} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 3 }} />{viewCount} vista{viewCount !== 1 ? 's' : ''}
                               {lastView && ` · última ${lastView.toLocaleDateString('es-AR', { day: '2-digit', month: 'short' })} ${lastView.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}`}
                             </span>

@@ -68,12 +68,8 @@ export default function LandingPage() {
           }}>
             Catálogos profesionales<br />
             <span style={{
-              color: '#fff',
-              textShadow: `
-                0 0 2px #fff, 0 0 6px #fff,
-                0 0 14px var(--violet), 0 0 28px var(--violet),
-                0 0 46px var(--magenta)
-              `,
+              color: 'var(--accent-text)', background: 'var(--accent)',
+              padding: '0 14px', borderRadius: 14, display: 'inline-block', marginTop: 6,
             }}>listos en 5 minutos</span>
           </h1>
           <p style={{ fontSize: 18, color: 'var(--text2)', lineHeight: 1.6, marginBottom: 36, maxWidth: 520, margin: '0 auto 36px' }}>

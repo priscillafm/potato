@@ -61,7 +61,7 @@ export default function ContactPage() {
             </div>
             <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>¡Consulta enviada!</h2>
             <p style={{ fontSize: 13, color: 'var(--text2)', marginBottom: 20 }}>Te respondemos al email que dejaste.</p>
-            <Link to="/" style={{ color: 'var(--accent)', fontSize: 13, fontWeight: 600, textDecoration: 'none' }}>← Volver al inicio</Link>
+            <Link to="/" style={{ color: 'var(--accent-ink)', fontSize: 13, fontWeight: 600, textDecoration: 'none' }}>← Volver al inicio</Link>
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px' }}>

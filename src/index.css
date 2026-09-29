@@ -1,28 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
-/* ── Tokens: Dark (default) ─────────────────────────────── */
+/* ── Tokens: Light (default) ────────────────────────────── */
 :root {
-  --bg:          #0C0A07;
-  --bg-bar:      rgba(12,10,7,0.85);
-  --bg-panel:    #110E0A;
-  --surface:     #171310;
-  --surface-h:   #1E1914;
-  --border:      rgba(255,255,255,0.07);
-  --border-str:  rgba(255,255,255,0.12);
-  --text:        #F2EDE6;
-  --text2:       #B9AE9F;
-  --text3:       #968B7D;
-  --accent:      #8B7FE8;
-  --accent-h:    #7A6DD9;
-  --accent-text: #0E0C18;
-  --danger:      #FF4D4D;
-  --success:     #22c55e;
-  --amber:       #E0B15B;
-  --glass:       rgba(18,14,9,0.72);
-  --glass-border: rgba(255,255,255,0.07);
-  --shadow:      0 8px 32px rgba(0,0,0,0.7);
-  --shadow-sm:   0 2px 8px rgba(0,0,0,0.45);
+  --bg:          #FFFFFF;
+  --bg-bar:      rgba(255,255,255,0.88);
+  --bg-panel:    #F6F6F6;
+  --surface:     #F6F6F6;
+  --surface-h:   #EDEDED;
+  --border:      rgba(0,0,0,0.08);
+  --border-str:  rgba(0,0,0,0.15);
+  --text:        #121212;
+  --text2:       #4D4D4D;
+  --text3:       #6A6A6A;
+  --accent:      #1ED760;           /* fondo de botones: siempre con --accent-text encima */
+  --accent-h:    #1BC257;
+  --accent-text: #000000;
+  --accent-ink:  #117A37;           /* el acento cuando es color de letra (el verde flúor no se lee sobre blanco) */
+  --danger:      #E22134;
+  --success:     #16A34A;
+  --amber:       #F59B23;
+  --glass:       rgba(255,255,255,0.8);
+  --glass-border: rgba(0,0,0,0.07);
+  --shadow:      0 8px 32px rgba(0,0,0,0.1);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.07);
   --font:        'Inter', system-ui, sans-serif;
   --font-light:  'Inter', system-ui, sans-serif;
   --font-mono:   'JetBrains Mono', monospace;
@@ -30,40 +31,38 @@
   --radius-sm:   8px;
   --transition:  all 0.18s cubic-bezier(0.4,0,0.2,1);
 
-  /* ── Paleta ampliada: una sola familia azul → violeta → magenta → rojo ── */
-  --indigo:      #5B6EE8;
-  --violet:      #8B7FE8;
-  --magenta:     #C864D8;
-  --flame:       #E8506B;
+  /* ── Paleta ampliada: bloques de color (tarjetas del Resumen, detalles) ── */
+  --indigo:      #1E3264;
+  --violet:      #8D67AB;
+  --magenta:     #E8115B;
+  --flame:       #E13300;
   /* alias viejos, para no romper nada que todavía los use */
   --blue:        var(--indigo);
   --pink:        var(--magenta);
   --coral:       var(--flame);
   --teal:        var(--indigo);
-  --grad-hero:   radial-gradient(120% 100% at 15% 0%, rgba(139,127,232,0.22) 0%, transparent 55%),
-                 radial-gradient(100% 90% at 85% 15%, rgba(91,110,232,0.16) 0%, transparent 50%),
-                 radial-gradient(90% 80% at 50% 100%, rgba(200,100,216,0.10) 0%, transparent 60%);
+  --grad-hero:   radial-gradient(120% 100% at 15% 0%, rgba(30,215,96,0.14) 0%, transparent 55%),
+                 radial-gradient(100% 90% at 85% 15%, rgba(141,103,171,0.12) 0%, transparent 50%),
+                 radial-gradient(90% 80% at 50% 100%, rgba(232,17,91,0.06) 0%, transparent 60%);
 }
 
-/* ── Tokens: Light ──────────────────────────────────────── */
-[data-theme="light"] {
-  --bg:          #F4EFE6;
-  --bg-bar:      rgba(244,239,230,0.88);
-  --bg-panel:    #EAE4D8;
-  --surface:     #FDFAF5;
-  --surface-h:   #F0EAE0;
-  --border:      rgba(0,0,0,0.08);
-  --border-str:  rgba(0,0,0,0.14);
-  --text:        #1A1208;
-  --text2:       #5C503F;
-  --text3:       #726555;
-  --accent:      #6B5FCB;
-  --accent-h:    #5B4FB8;
-  --accent-text: #FFFFFF;
-  --glass:       rgba(253,250,245,0.78);
-  --glass-border: rgba(0,0,0,0.07);
-  --shadow:      0 8px 32px rgba(0,0,0,0.1);
-  --shadow-sm:   0 2px 8px rgba(0,0,0,0.07);
+/* ── Tokens: Dark ───────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:          #121212;
+  --bg-bar:      rgba(18,18,18,0.88);
+  --bg-panel:    #000000;
+  --surface:     #1F1F1F;
+  --surface-h:   #2A2A2A;
+  --border:      rgba(255,255,255,0.08);
+  --border-str:  rgba(255,255,255,0.15);
+  --text:        #FFFFFF;
+  --text2:       #B3B3B3;
+  --text3:       #A7A7A7;
+  --accent-ink:  #1ED760;
+  --glass:       rgba(18,18,18,0.8);
+  --glass-border: rgba(255,255,255,0.08);
+  --shadow:      0 8px 32px rgba(0,0,0,0.6);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.4);
 }
 
 /* ── Base ───────────────────────────────────────────────── */
@@ -224,7 +223,7 @@ html, body, #root {
   background: var(--text2);
   transition: transform 0.2s, background 0.2s;
 }
-[data-theme="light"] .theme-toggle::after {
+:root:not([data-theme="dark"]) .theme-toggle::after {
   transform: translateX(16px);
   background: var(--accent);
 }

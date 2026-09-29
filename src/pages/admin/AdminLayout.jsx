@@ -192,7 +192,7 @@ export default function AdminLayout() {
             <NavLink to="/admin/super"
               style={({ isActive }) => ({
                 ...navLinkStyle(isActive),
-                color: isActive ? 'var(--accent)' : 'var(--text3)',
+                color: isActive ? 'var(--text)' : 'var(--text3)',
               })}>
               {() => <><PotatoMark size={16} /><span>Potato Admin</span></>}
             </NavLink>
@@ -228,9 +228,10 @@ export default function AdminLayout() {
 const navLinkStyle = (isActive) => ({
   display: 'flex', alignItems: 'center', gap: 10,
   padding: '9px 10px', textDecoration: 'none', borderRadius: 8,
-  color: isActive ? 'var(--accent)' : 'var(--text2)',
-  background: isActive ? 'color-mix(in srgb, var(--accent) 10%, transparent)' : 'transparent',
-  fontSize: 14, fontWeight: isActive ? 600 : 400,
+  color: isActive ? 'var(--text)' : 'var(--text2)',
+  background: isActive ? 'var(--bg)' : 'transparent',
+  boxShadow: isActive ? 'var(--shadow-sm)' : 'none',
+  fontSize: 14, fontWeight: isActive ? 600 : 500,
   transition: 'all 0.15s',
 })
 

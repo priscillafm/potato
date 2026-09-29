@@ -186,7 +186,7 @@ export default function Products() {
           padding: '10px 14px', borderBottom: '1px solid var(--border)',
           background: 'var(--bg-bar)', flexShrink: 0,
         }}>
-          <BrandChip label="Todas" color="var(--accent)" active={brandId === 'all'} onClick={() => { setBrandId('all'); setPage(0) }} />
+          <BrandChip label="Todas" color="var(--accent-ink)" active={brandId === 'all'} onClick={() => { setBrandId('all'); setPage(0) }} />
           {brands.map(b => (
             <BrandChip key={b.id} label={b.name} color={b.color} active={brandId === b.id}
               onClick={() => { setBrandId(b.id); setPage(0) }} />
@@ -201,7 +201,7 @@ export default function Products() {
           <div style={{ padding: '0 14px 10px', fontSize: 11, fontWeight: 600, color: 'var(--text3)', letterSpacing: '.08em', textTransform: 'uppercase' }}>
             Marcas
           </div>
-          <BrandBtn label="Todas" color="var(--accent)" active={brandId === 'all'} onClick={() => { setBrandId('all'); setPage(0) }} />
+          <BrandBtn label="Todas" color="var(--accent-ink)" active={brandId === 'all'} onClick={() => { setBrandId('all'); setPage(0) }} />
           {brands.map(b => (
             <BrandBtn key={b.id} label={b.name} color={b.color} active={brandId === b.id}
               onClick={() => { setBrandId(b.id); setPage(0) }} />
@@ -292,7 +292,7 @@ export default function Products() {
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontSize: 13, lineHeight: 1.35, color: 'var(--text)', fontWeight: 600 }}>{p.name}</div>
                         <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 2, flexWrap: 'wrap' }}>
-                          <code style={{ fontSize: 11, color: 'var(--accent)' }}>{p.sku}</code>
+                          <code style={{ fontSize: 11, color: 'var(--accent-ink)' }}>{p.sku}</code>
                           {p.categories?.name && <span style={{ fontSize: 11, color: 'var(--text3)' }}>· {p.categories.name}</span>}
                         </div>
                       </div>
@@ -358,7 +358,7 @@ export default function Products() {
                           : <span style={{ display:'inline-flex', width:38, height:38, background:'var(--surface-h)', borderRadius:4, alignItems:'center', justifyContent:'center', color:'var(--text3)' }}><Icon name="image" size={16} /></span>
                         }
                       </td>
-                      <td style={tdStyle}><code style={{ fontSize: 12, color: 'var(--accent)' }}>{p.sku}</code></td>
+                      <td style={tdStyle}><code style={{ fontSize: 12, color: 'var(--accent-ink)' }}>{p.sku}</code></td>
                       <td style={{ ...tdStyle, maxWidth: 340 }}>
                         <div style={{ fontSize: 13, lineHeight: 1.4, color: 'var(--text)' }}>{p.name}</div>
                       </td>
@@ -419,7 +419,7 @@ export default function Products() {
         <Modal onClose={closeEdit}>
           <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{editing.id ? 'Editar producto' : 'Nuevo producto'}</h3>
           {editing.id ? (
-            <code style={{ fontSize: 12, color: 'var(--accent)' }}>{editing.sku}</code>
+            <code style={{ fontSize: 12, color: 'var(--accent-ink)' }}>{editing.sku}</code>
           ) : (
             <>
               <label style={labelStyle}>SKU</label>
@@ -534,7 +534,7 @@ export default function Products() {
             ¿Seguro que querés eliminar este producto?
           </p>
           <div style={{ padding: '10px 12px', background: 'var(--bg-panel)', borderRadius: 8, marginBottom: 20 }}>
-            <code style={{ fontSize: 12, color: 'var(--accent)' }}>{confirmDel.sku}</code>
+            <code style={{ fontSize: 12, color: 'var(--accent-ink)' }}>{confirmDel.sku}</code>
             <div style={{ fontSize: 14, marginTop: 4 }}>{confirmDel.name}</div>
           </div>
           <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>

@@ -81,7 +81,7 @@ export default function AdminTour() {
         padding: 16,
         boxShadow: '0 12px 40px rgba(0,0,0,.5)',
       }}>
-        <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--accent)', letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: 6 }}>
+        <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--accent-ink)', letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: 6 }}>
           {step + 1} / {TOUR_STEPS.length}
         </div>
         <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 6 }}>{current.title}</div>

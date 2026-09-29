@@ -5,6 +5,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './index.css'
 import App from './App.jsx'
 import ErrorBoundary from './components/ErrorBoundary'
+import { THEME_KEY } from './lib/theme'
+
+// Tema claro por defecto; el oscuro solo si la persona lo eligió (se aplica antes de pintar).
+let savedTheme = null
+try { savedTheme = localStorage.getItem(THEME_KEY) } catch { /* sin localStorage */ }
+document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : 'light')
 
 // Una pestaña abierta antes de publicar una versión nueva pide archivos que ya no existen.
 // Recargamos una sola vez automáticamente; si vuelve a fallar, lo maneja el ErrorBoundary.

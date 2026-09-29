@@ -155,7 +155,7 @@ export default function Users() {
         {!canAddUser && (
           <p style={{ fontSize: 13, color: '#f97316', marginBottom: 12 }}>
             <span style={{ display: 'inline-flex', verticalAlign: 'middle', marginRight: 6 }}><Icon name="alert" size={14} /></span>Alcanzaste el límite de {limits.max_users} usuario{limits.max_users !== 1 ? 's' : ''} de tu plan.{' '}
-            <Link to="/pricing" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Actualizar plan →</Link>
+            <Link to="/pricing" style={{ color: 'var(--accent-ink)', textDecoration: 'none' }}>Actualizar plan →</Link>
           </p>
         )}
         <fieldset disabled={!canAddUser} style={{ border: 'none', padding: 0, margin: 0, minWidth: 0 }}>

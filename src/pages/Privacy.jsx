@@ -34,7 +34,7 @@ export default function Privacy() {
       <p>
         Podés ver y corregir los datos de tu perfil y de tu empresa desde tu cuenta. Para eliminar tu cuenta
         y los datos asociados, pedilo desde tu perfil (sección «Datos y privacidad») o escribiéndonos desde la
-        página de <Link to="/contacto?asunto=eliminacion" style={{ color: "var(--accent)" }}>contacto</Link>; la procesamos dentro de los 30 días. Al eliminar
+        página de <Link to="/contacto?asunto=eliminacion" style={{ color: "var(--accent-ink)" }}>contacto</Link>; la procesamos dentro de los 30 días. Al eliminar
         tu cuenta, tus catálogos públicos dejan de estar disponibles.
       </p>
 

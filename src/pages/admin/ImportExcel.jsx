@@ -355,7 +355,7 @@ export default function ImportExcel() {
       {step === 'preview' && summary && (
         <div>
           <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-            <Stat label="Total detectados" value={summary.total} color="var(--accent)" />
+            <Stat label="Total detectados" value={summary.total} color="var(--accent-ink)" />
             <Stat label="Marcas" value={summary.byBrand.filter(([b]) => b !== '(sin marca)').length} color="#3b82f6" />
             <Stat label="Sin marca" value={summary.byBrand.find(([b]) => b === '(sin marca)')?.[1] ?? 0} color="#f97316" />
           </div>
@@ -416,7 +416,7 @@ export default function ImportExcel() {
                   <tbody>
                     {summary.sample.map(r => (
                       <tr key={r.sku}>
-                        <td style={{ padding: '8px 14px', borderBottom: '1px solid var(--border)' }}><code style={{ color: 'var(--accent)' }}>{r.sku}</code></td>
+                        <td style={{ padding: '8px 14px', borderBottom: '1px solid var(--border)' }}><code style={{ color: 'var(--accent-ink)' }}>{r.sku}</code></td>
                         <td style={{ padding: '8px 14px', borderBottom: '1px solid var(--border)' }}>{r.name}</td>
                         <td style={{ padding: '8px 14px', borderBottom: '1px solid var(--border)', color: r.brand ? 'var(--text)' : 'var(--text3)' }}>{r.brand ?? '—'}</td>
                         <td style={{ padding: '8px 14px', borderBottom: '1px solid var(--border)' }}>{r.price ?? '—'}</td>
@@ -473,7 +473,7 @@ export default function ImportExcel() {
             maxHeight: 400, overflowY: 'auto', lineHeight: 1.8,
           }}>
             {log.map((l, i) => <div key={i}>{l}</div>)}
-            {step === 'importing' && <div style={{ color: 'var(--accent)' }}>Procesando...</div>}
+            {step === 'importing' && <div style={{ color: 'var(--accent-ink)' }}>Procesando...</div>}
           </div>
           {step === 'done' && (
             <button onClick={reset} style={{ ...btnPrimary, marginTop: 16 }}>

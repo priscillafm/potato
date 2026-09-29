@@ -168,7 +168,7 @@ export default function OnboardingPage() {
           {/* Step 1 — Bienvenida */}
           {step === 1 && (
             <div style={{ textAlign: 'center' }}>
-              <div style={{ marginBottom: 16, color: 'var(--accent)' }}><Icon name="welcome" size={48} /></div>
+              <div style={{ marginBottom: 16, color: 'var(--accent-ink)' }}><Icon name="welcome" size={48} /></div>
               <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 10 }}>
                 Bienvenido a Potato
               </h1>
@@ -265,7 +265,7 @@ export default function OnboardingPage() {
           {/* Step 5 — Listo */}
           {step === 5 && (
             <div style={{ textAlign: 'center' }}>
-              <div style={{ marginBottom: 16, color: 'var(--accent)' }}><Icon name="celebrate" size={48} /></div>
+              <div style={{ marginBottom: 16, color: 'var(--accent-ink)' }}><Icon name="celebrate" size={48} /></div>
               <h2 style={{ fontSize: 22, fontWeight: 600, marginBottom: 10 }}>
                 ¡Todo listo!
               </h2>

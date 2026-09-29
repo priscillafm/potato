@@ -46,7 +46,7 @@ export default function PricingCards({ plans, renderCta }) {
             )}
             <div style={{ fontSize: 26, fontWeight: 600, marginBottom: price.sub ? 2 : 12, whiteSpace: 'nowrap' }}>{price.main}</div>
             {price.sub && (
-              <div style={{ fontSize: 11, fontWeight: 600, marginBottom: 16, color: accent ? 'var(--accent-text)' : 'var(--accent)' }}>
+              <div style={{ fontSize: 11, fontWeight: 600, marginBottom: 16, color: accent ? 'var(--accent-text)' : 'var(--accent-ink)' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><Icon name="rocket" size={12} /> {price.sub}</span>
               </div>
             )}

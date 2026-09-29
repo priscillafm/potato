@@ -158,7 +158,7 @@ export default function RegisterPage() {
           {step === 1 && (
             <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text3)', marginTop: 16 }}>
               ¿Ya tenés cuenta?{' '}
-              <Link to="/login" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
+              <Link to="/login" style={{ color: 'var(--accent-ink)', textDecoration: 'none', fontWeight: 600 }}>
                 Iniciá sesión
               </Link>
             </p>

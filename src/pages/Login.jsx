@@ -97,7 +97,7 @@ export default function LoginPage() {
 
             <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text3)', marginTop: 16 }}>
               ¿No tenés cuenta?{' '}
-              <Link to="/register" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
+              <Link to="/register" style={{ color: 'var(--accent-ink)', textDecoration: 'none', fontWeight: 600 }}>
                 Registrarse gratis
               </Link>
             </p>

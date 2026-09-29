@@ -44,7 +44,7 @@ export default function Terms() {
       </p>
 
       <h2 style={h2}>6. Contacto</h2>
-      <p>Para consultas sobre estos términos, escribinos desde la página de <Link to="/contacto" style={{ color: "var(--accent)" }}>contacto</Link>.</p>
+      <p>Para consultas sobre estos términos, escribinos desde la página de <Link to="/contacto" style={{ color: "var(--accent-ink)" }}>contacto</Link>.</p>
     </LegalPage>
   )
 }
