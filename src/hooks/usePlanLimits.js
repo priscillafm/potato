@@ -25,12 +25,13 @@ export function usePlanLimits() {
         .eq('name', plan)
         .single()
       const l = data?.limits ?? {}
-      const toLimit = v => (v === -1 || v == null) ? null : v
+      // null = ilimitado; el valor por defecto solo aplica si el plan no define ese límite
+      const toLimit = (v, fallback) => v == null ? fallback : v === -1 ? null : v
       return {
-        max_products:        toLimit(l.max_products)   ?? 75,
-        max_users:           toLimit(l.max_users)      ?? 1,
-        max_brands:          toLimit(l.max_brands)     ?? 3,
-        max_catalogs_active: toLimit(l.active_catalogs) ?? 1,
+        max_products:        toLimit(l.max_products, 75),
+        max_users:           toLimit(l.max_users, 1),
+        max_brands:          toLimit(l.max_brands, 3),
+        max_catalogs_active: toLimit(l.active_catalogs, 1),
       }
     },
     enabled: !!plan,
