@@ -198,7 +198,7 @@ export default function Products() {
           width: 200, minWidth: 200, borderRight: '1px solid var(--border)',
           overflowY: 'auto', padding: '16px 0', background: 'var(--bg-bar)',
         }}>
-          <div style={{ padding: '0 14px 10px', fontSize: 11, fontWeight: 700, color: 'var(--text3)', letterSpacing: '.08em', textTransform: 'uppercase' }}>
+          <div style={{ padding: '0 14px 10px', fontSize: 11, fontWeight: 600, color: 'var(--text3)', letterSpacing: '.08em', textTransform: 'uppercase' }}>
             Marcas
           </div>
           <BrandBtn label="Todas" color="var(--accent)" active={brandId === 'all'} onClick={() => { setBrandId('all'); setPage(0) }} />
@@ -277,7 +277,7 @@ export default function Products() {
                   {showBrandRow && (
                     <div style={{
                       padding: '10px 2px 6px',
-                      fontSize: 11, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase',
+                      fontSize: 11, fontWeight: 600, letterSpacing: '.06em', textTransform: 'uppercase',
                       color: p.brands?.color ?? 'var(--text3)',
                     }}>
                       {curBrand ?? 'Sin marca'}
@@ -340,7 +340,7 @@ export default function Products() {
                       <tr key={`brand-${p.brand_id ?? 'none'}-${i}`}>
                         <td colSpan={7} style={{
                           padding: '8px 14px 4px',
-                          fontSize: 12, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase',
+                          fontSize: 12, fontWeight: 600, letterSpacing: '.06em', textTransform: 'uppercase',
                           color: p.brands?.color ?? 'var(--text3)',
                           borderBottom: `2px solid ${p.brands?.color ?? 'var(--border)'}22`,
                           background: 'var(--bg-panel)',
@@ -417,7 +417,7 @@ export default function Products() {
       {/* ── Edit modal ── */}
       {editing && (
         <Modal onClose={closeEdit}>
-          <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 4 }}>{editing.id ? 'Editar producto' : 'Nuevo producto'}</h3>
+          <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{editing.id ? 'Editar producto' : 'Nuevo producto'}</h3>
           {editing.id ? (
             <code style={{ fontSize: 12, color: 'var(--accent)' }}>{editing.sku}</code>
           ) : (
@@ -529,7 +529,7 @@ export default function Products() {
       {/* ── Confirm delete modal ── */}
       {confirmDel && (
         <Modal onClose={() => setConfirmDel(null)}>
-          <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Eliminar producto</h3>
+          <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>Eliminar producto</h3>
           <p style={{ fontSize: 14, color: 'var(--text2)', marginBottom: 4 }}>
             ¿Seguro que querés eliminar este producto?
           </p>
@@ -601,11 +601,11 @@ const inputStyle = { flex: 1, maxWidth: 280, padding: '7px 11px', background: 'v
 const selectStyle= { padding: '7px 10px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 6, color: 'var(--text)', fontSize: 14, outline: 'none', cursor: 'pointer' }
 const inputFull  = { width: '100%', padding: '8px 10px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 6, color: 'var(--text)', fontSize: 14, outline: 'none', boxSizing: 'border-box', marginTop: 4 }
 const labelStyle = { fontSize: 12, fontWeight: 600, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '.05em', marginTop: 14, display: 'block' }
-const btnPrimary = { padding: '8px 20px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 700, fontSize: 14, cursor: 'pointer' }
+const btnPrimary = { padding: '8px 20px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 14, cursor: 'pointer' }
 const btnSecondary = { padding: '8px 16px', background: 'var(--surface-h)', color: 'var(--text2)', border: '1px solid var(--border)', borderRadius: 7, fontSize: 14, cursor: 'pointer' }
 const fabStyle = {
   position: 'fixed', right: 18, bottom: 22, width: 52, height: 52, borderRadius: '50%',
   background: 'var(--accent)', color: 'var(--accent-text)', border: 'none',
   display: 'flex', alignItems: 'center', justifyContent: 'center',
-  fontSize: 26, fontWeight: 700, lineHeight: 1, boxShadow: '0 4px 14px rgba(0,0,0,.35)', zIndex: 30,
+  fontSize: 26, fontWeight: 600, lineHeight: 1, boxShadow: '0 4px 14px rgba(0,0,0,.35)', zIndex: 30,
 }

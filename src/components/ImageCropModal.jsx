@@ -95,7 +95,7 @@ export default function ImageCropModal({ file, onConfirm, onCancel }) {
         display: 'flex', flexDirection: 'column', gap: 16,
       }}>
         <div>
-          <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Ajustar imagen</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>Ajustar imagen</h3>
           <p style={{ fontSize: 12, color: 'var(--text3)' }}>
             Arrastrá para reposicionar · scroll para hacer zoom
           </p>
@@ -162,5 +162,5 @@ export default function ImageCropModal({ file, onConfirm, onCancel }) {
   )
 }
 
-const btnPrimary   = { padding: '8px 20px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 700, fontSize: 13, cursor: 'pointer' }
+const btnPrimary   = { padding: '8px 20px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 13, cursor: 'pointer' }
 const btnSecondary = { padding: '8px 16px', background: 'var(--surface-h)', color: 'var(--text2)', border: '1px solid var(--border)', borderRadius: 7, fontSize: 13, cursor: 'pointer' }

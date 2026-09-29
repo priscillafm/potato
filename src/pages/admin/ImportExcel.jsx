@@ -302,7 +302,7 @@ export default function ImportExcel() {
 
   return (
     <div style={{ padding: isMobile ? 16 : 28, overflowY: 'auto', flex: 1 }}>
-      <h2 style={{ fontSize: 19, fontWeight: 700, marginBottom: 6 }}>Importar productos desde Excel</h2>
+      <h2 style={{ fontSize: 19, fontWeight: 600, marginBottom: 6 }}>Importar productos desde Excel</h2>
       <p style={{ fontSize: 14, color: 'var(--text2)', marginBottom: 6 }}>
         Usá esto para la <strong>carga inicial</strong> de tu catálogo. Subí tu lista en formato .xlsx con la primera fila como encabezado.
       </p>
@@ -339,7 +339,7 @@ export default function ImportExcel() {
           onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
         >
           <div style={{ color: 'var(--text3)', marginBottom: 12, display: 'flex', justifyContent: 'center' }}><Icon name="import" size={36} /></div>
-          <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--text)', marginBottom: 6 }}>Seleccioná tu archivo Excel</div>
+          <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--text)', marginBottom: 6 }}>Seleccioná tu archivo Excel</div>
           <div style={{ fontSize: 13, color: 'var(--text3)' }}>Formatos: .xlsx · .xls</div>
           <input ref={fileRef} type="file" accept=".xlsx,.xls" style={{ display: 'none' }} onChange={handleFile} />
         </div>
@@ -450,7 +450,7 @@ export default function ImportExcel() {
                   <span style={{ fontSize: 14 }}>
                     {brand === '(sin marca)' ? 'Sin marca' : brand}
                   </span>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text2)' }}>{count}</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text2)' }}>{count}</span>
                 </div>
               ))}
             </div>
@@ -490,10 +490,10 @@ function Stat({ label, value, color }) {
   return (
     <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 10, padding: '12px 16px', minWidth: 100 }}>
       <div style={{ fontSize: 12, color: 'var(--text3)', marginBottom: 4, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em' }}>{label}</div>
-      <div style={{ fontSize: 25, fontWeight: 800, color }}>{value}</div>
+      <div style={{ fontSize: 25, fontWeight: 700, color }}>{value}</div>
     </div>
   )
 }
 
-const btnPrimary   = { padding: '9px 22px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 700, cursor: 'pointer', fontSize: 14 }
+const btnPrimary   = { padding: '9px 22px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 600, cursor: 'pointer', fontSize: 14 }
 const btnSecondary = { padding: '9px 16px', background: 'var(--surface-h)', color: 'var(--text2)', border: '1px solid var(--border)', borderRadius: 7, fontSize: 14, cursor: 'pointer' }

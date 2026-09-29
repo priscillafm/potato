@@ -62,7 +62,7 @@ export default function NotificationBell() {
             position: 'absolute', top: 2, right: 2,
             width: 16, height: 16, borderRadius: '50%',
             background: 'var(--accent)', color: 'var(--accent-text)',
-            fontSize: 9, fontWeight: 700,
+            fontSize: 9, fontWeight: 600,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
             {unreadCount > 9 ? '9+' : unreadCount}
@@ -81,7 +81,7 @@ export default function NotificationBell() {
             padding: '12px 16px', borderBottom: '1px solid var(--border)',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           }}>
-            <span style={{ fontSize: 13, fontWeight: 700 }}>Notificaciones</span>
+            <span style={{ fontSize: 13, fontWeight: 600 }}>Notificaciones</span>
             {notifications.length > 0 && (
               <button onClick={markAllRead} style={{
                 background: 'none', border: 'none', fontSize: 11,

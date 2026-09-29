@@ -96,7 +96,7 @@ export default function CatalogsPage() {
           height: 52, borderBottom: '1px solid var(--border)', flexShrink: 0,
         }}>
           <button onClick={() => navigate('/app')} style={{ ...sideBtn, padding: '6px 10px' }}>← Catálogo</button>
-          <h1 style={{ fontSize: 15, fontWeight: 700, flex: 1, margin: 0 }}>Mis catálogos</h1>
+          <h1 style={{ fontSize: 15, fontWeight: 600, flex: 1, margin: 0 }}>Mis catálogos</h1>
           <button onClick={() => navigate('/profile')} style={sideBtn}>Perfil</button>
         </header>
       ) : (
@@ -106,7 +106,7 @@ export default function CatalogsPage() {
             <div style={{ fontSize: 12, color: 'var(--text3)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6 }}>
               {membership?.companies?.name ?? '—'}
             </div>
-            <h1 style={{ fontSize: 16, fontWeight: 700 }}>Mis catálogos</h1>
+            <h1 style={{ fontSize: 16, fontWeight: 600 }}>Mis catálogos</h1>
           </div>
           <nav style={{ flex: 1, padding: '8px 6px' }}>
             <button className="brand-btn" onClick={() => navigate('/app')}>
@@ -124,7 +124,7 @@ export default function CatalogsPage() {
         <div style={{ maxWidth: 800 }}>
           <div style={{ display: 'flex', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
             <div>
-              <h2 style={{ fontSize: isMobile ? 18 : 21, fontWeight: 700, letterSpacing: '-0.4px' }}>Catálogos guardados</h2>
+              <h2 style={{ fontSize: isMobile ? 18 : 21, fontWeight: 600, letterSpacing: '-0.4px' }}>Catálogos guardados</h2>
               <p style={{ fontSize: 15, color: 'var(--text3)', marginTop: 4 }}>
                 Abrí un catálogo para modificar precios o regenerar el PDF.
               </p>
@@ -143,7 +143,7 @@ export default function CatalogsPage() {
                   background: canAddCatalog ? 'var(--accent)' : 'var(--surface-h)',
                   color: canAddCatalog ? 'var(--accent-text)' : 'var(--text3)',
                   border: canAddCatalog ? 'none' : '1px solid var(--border)',
-                  borderRadius: 9, fontWeight: 700, fontSize: 14, cursor: 'pointer',
+                  borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: 'pointer',
                 }}
                 title={!canAddCatalog ? `Límite: ${usage.catalogs_active}/${limits.max_catalogs_active} catálogos activos` : undefined}
               >
@@ -198,7 +198,7 @@ export default function CatalogsPage() {
                         justifyContent: 'center', color: 'var(--text3)',
                       }}><Icon name="document" size={18} /></div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontWeight: 700, fontSize: 15 }}>{cat.name}</div>
+                        <div style={{ fontWeight: 600, fontSize: 15 }}>{cat.name}</div>
                         <div style={{ fontSize: 13, color: 'var(--text3)', display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 2 }}>
                           <span>{productCount} producto{productCount !== 1 ? 's' : ''}</span>
                           {brandNames.length > 0 && <span>{brandNames.join(' · ')}</span>}
@@ -248,7 +248,7 @@ export default function CatalogsPage() {
           <div className="modal-pop-in" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: 24, width: '100%', maxWidth: 460 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, color: 'var(--success)' }}>
               <Icon name="check-circle" size={22} />
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--text)' }}>{linkModal.published ? 'Catálogo publicado' : 'Link de tu catálogo'}</h3>
+              <h3 style={{ fontSize: 17, fontWeight: 600, color: 'var(--text)' }}>{linkModal.published ? 'Catálogo publicado' : 'Link de tu catálogo'}</h3>
             </div>
             <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.6, marginBottom: 14 }}>
               Cualquiera con este link puede ver el catálogo y armar su pedido. Podés desactivarlo cuando quieras con «Desactivar».
@@ -258,7 +258,7 @@ export default function CatalogsPage() {
             <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
               <button onClick={() => setLinkModal(null)} style={sideBtn}>Cerrar</button>
               <button onClick={async () => { try { await navigator.clipboard.writeText(linkModal.url); setCopied(true) } catch { setCopied(false) } }}
-                style={{ ...sideBtn, background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', fontWeight: 700 }}>
+                style={{ ...sideBtn, background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', fontWeight: 600 }}>
                 {copied ? '¡Copiado!' : 'Copiar link'}
               </button>
             </div>
@@ -270,13 +270,13 @@ export default function CatalogsPage() {
         <div className="modal-overlay-in" onClick={e => e.target === e.currentTarget && setWappPrompt(null)}
           style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', zIndex: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
           <div className="modal-pop-in" style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: 24, width: '100%', maxWidth: 420 }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Configurá tu WhatsApp para recibir pedidos</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Configurá tu WhatsApp para recibir pedidos</h3>
             <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.6, marginBottom: 20 }}>
               Todavía no cargaste tu número. Si compartís el catálogo así, tus clientes solo van a poder enviarte el pedido por email o copiarlo.
             </p>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
               <button onClick={() => shareCatalog(wappPrompt, true)} style={sideBtn}>Compartir igual</button>
-              <button onClick={() => navigate('/profile')} style={{ ...sideBtn, background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', fontWeight: 700 }}>Configurar WhatsApp</button>
+              <button onClick={() => navigate('/profile')} style={{ ...sideBtn, background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', fontWeight: 600 }}>Configurar WhatsApp</button>
             </div>
           </div>
         </div>

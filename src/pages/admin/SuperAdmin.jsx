@@ -59,7 +59,7 @@ export default function SuperAdmin() {
   return (
     <div style={{ padding: isMobile ? 16 : 28, overflowY: 'auto', flex: 1 }}>
       <div style={{ marginBottom: 20 }}>
-        <h2 style={{ fontSize: 19, fontWeight: 700 }}>Superadministración</h2>
+        <h2 style={{ fontSize: 19, fontWeight: 600 }}>Superadministración</h2>
         <p style={{ fontSize: 14, color: 'var(--text3)', marginTop: 3 }}>
           Cómo se usa Potato en general. Solo ves cantidades y nombres de empresa: no los mails, productos ni precios de tus clientes.
         </p>
@@ -75,7 +75,7 @@ export default function SuperAdmin() {
           }}>
             {t.label}
             {t.key === 'soporte' && newSupport > 0 && (
-              <span style={{ background: 'var(--danger)', color: '#fff', borderRadius: 999, fontSize: 11, fontWeight: 700, padding: '1px 7px' }}>{newSupport}</span>
+              <span style={{ background: 'var(--danger)', color: '#fff', borderRadius: 999, fontSize: 11, fontWeight: 600, padding: '1px 7px' }}>{newSupport}</span>
             )}
           </button>
         ))}
@@ -132,7 +132,7 @@ function RateCard() {
         <input type="number" min="1" step="0.01" value={current} onChange={e => { setValue(e.target.value); setMsg('') }}
           style={{ width: 90, padding: '7px 10px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 8, color: 'var(--text)', fontSize: 14, outline: 'none' }} />
         <span style={{ fontSize: 13 }}>pesos uruguayos</span>
-        <button onClick={save} style={{ padding: '7px 16px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>Guardar</button>
+        <button onClick={save} style={{ padding: '7px 16px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 8, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>Guardar</button>
       </div>
       {parsed > 0 && (
         <p style={{ fontSize: 12, color: 'var(--text3)', marginTop: 8 }}>
@@ -193,7 +193,7 @@ function Overview({ companies, support }) {
         ].map(s => (
           <div key={s.label} style={{ background: 'var(--surface)', border: '1px solid ' + (s.alert ? 'var(--danger)' : 'var(--border)'), borderRadius: 12, padding: '14px 16px' }}>
             <div style={{ fontSize: 12, color: 'var(--text3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{s.label}</div>
-            <div style={{ fontSize: 27, fontWeight: 700 }}>{s.value}</div>
+            <div style={{ fontSize: 27, fontWeight: 600 }}>{s.value}</div>
             {s.sub && <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 2 }}>{s.sub}</div>}
           </div>
         ))}
@@ -205,7 +205,7 @@ function Overview({ companies, support }) {
           <div key={step.label} style={{ marginBottom: 10 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 4 }}>
               <span style={{ color: 'var(--text2)' }}>{step.label}</span>
-              <span style={{ fontWeight: 700 }}>{step.n}</span>
+              <span style={{ fontWeight: 600 }}>{step.n}</span>
             </div>
             <div style={{ height: 6, background: 'var(--bg-panel)', borderRadius: 99 }}>
               <div style={{ height: '100%', width: (total ? Math.round((step.n / total) * 100) : 0) + '%', background: 'var(--accent)', borderRadius: 99, transition: 'width .4s' }} />
@@ -268,7 +268,7 @@ function Companies({ companies, onChanged }) {
           return (
             <div key={c.company_id} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, padding: '14px 18px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
               <div style={{ flex: 1, minWidth: 240 }}>
-                <div style={{ fontWeight: 700, fontSize: 15 }}>{c.company_name}</div>
+                <div style={{ fontWeight: 600, fontSize: 15 }}>{c.company_name}</div>
                 <div style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                   <span>{plural(c.users_count, 'usuario')}</span>
                   <span>{plural(c.products_count, 'producto')} ({c.products_with_image} con foto, {c.products_with_price} con precio)</span>
@@ -282,7 +282,7 @@ function Companies({ companies, onChanged }) {
                 </div>
               </div>
               <select value={c.plan ?? 'free'} onChange={e => changePlan(c.company_id, e.target.value)} style={{
-                padding: '5px 10px', borderRadius: 7, fontSize: 13, fontWeight: 700,
+                padding: '5px 10px', borderRadius: 7, fontSize: 13, fontWeight: 600,
                 border: '1px solid ' + plan.color + '44', background: plan.color + '11', color: plan.color, cursor: 'pointer', outline: 'none',
               }}>
                 {Object.entries(PLANS).map(([key, p]) => <option key={key} value={key}>{p.label}</option>)}
@@ -296,7 +296,7 @@ function Companies({ companies, onChanged }) {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           onClick={e => { if (e.target === e.currentTarget) setShowNew(false) }}>
           <div style={{ background: 'var(--surface)', borderRadius: 16, padding: 28, width: '100%', maxWidth: 400, border: '1px solid var(--border)' }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 20 }}>Nueva empresa</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 20 }}>Nueva empresa</h3>
             <label style={labelStyle}>Nombre de la empresa</label>
             <input autoFocus value={newName} onChange={e => setNewName(e.target.value)} placeholder="Ej: Distribuidora García" style={inputStyle} />
             <label style={{ ...labelStyle, marginTop: 14 }}>Plan</label>
@@ -351,7 +351,7 @@ function Support({ support, onChanged }) {
             <div key={m.id} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, padding: '14px 18px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', marginBottom: 6 }}>
                 <div>
-                  <span style={{ fontWeight: 700, fontSize: 15 }}>{m.name}</span>
+                  <span style={{ fontWeight: 600, fontSize: 15 }}>{m.name}</span>
                   <span style={{ fontSize: 13, color: 'var(--text3)', marginLeft: 8 }}>{m.email}{m.company ? ' · ' + m.company : ''}{m.plan ? ' · interés: ' + m.plan : ''}</span>
                 </div>
                 <div style={{ fontSize: 12, color: 'var(--text3)' }}>{STATUS_LABEL[m.status]} · {fmtDate(m.created_at)}</div>
@@ -373,7 +373,7 @@ function Support({ support, onChanged }) {
   )
 }
 
-const sectionTitle = { fontSize: 14, fontWeight: 700, marginBottom: 10 }
+const sectionTitle = { fontSize: 14, fontWeight: 600, marginBottom: 10 }
 const labelStyle = {
   display: 'block', fontSize: 12, color: 'var(--text3)', marginBottom: 6,
   fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
@@ -385,7 +385,7 @@ const inputStyle = {
 }
 const primaryBtn = {
   padding: '9px 18px', background: 'var(--accent)', color: 'var(--accent-text)',
-  border: 'none', borderRadius: 9, fontWeight: 700, fontSize: 14, cursor: 'pointer',
+  border: 'none', borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: 'pointer',
 }
 const secondaryBtn = {
   padding: '7px 14px', background: 'var(--surface-h)', color: 'var(--text2)',

@@ -45,26 +45,26 @@ export default function CheckoutReturn() {
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}><PotatoMark size={48} /></div>
         {status === 'checking' && (
           <>
-            <h1 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Confirmando tu pago...</h1>
+            <h1 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>Confirmando tu pago...</h1>
             <p style={{ fontSize: 13, color: 'var(--text3)' }}>Esto puede tardar unos segundos.</p>
           </>
         )}
         {status === 'active' && (
           <>
-            <h1 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>¡Listo! Tu plan Pro está activo</h1>
+            <h1 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>¡Listo! Tu plan Pro está activo</h1>
             <p style={{ fontSize: 13, color: 'var(--text3)' }}>Te llevamos a tu panel...</p>
           </>
         )}
         {status === 'pending' && (
           <>
-            <h1 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Tu pago está procesándose</h1>
+            <h1 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>Tu pago está procesándose</h1>
             <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 20 }}>
               Puede tardar un poco más de lo normal. Te vamos a avisar cuando esté listo — podés seguir
               usando Potato mientras tanto.
             </p>
             <button onClick={() => navigate('/app')} style={{
               padding: '10px 20px', background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 9, fontWeight: 700, fontSize: 13, cursor: 'pointer',
+              border: 'none', borderRadius: 9, fontWeight: 600, fontSize: 13, cursor: 'pointer',
             }}>
               Ir a mi panel
             </button>

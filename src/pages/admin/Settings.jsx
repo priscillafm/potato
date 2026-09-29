@@ -93,7 +93,7 @@ export default function Settings() {
 
   return (
     <div style={{ padding: isMobile ? 16 : 28, overflowY: 'auto', flex: 1, maxWidth: 560 }}>
-      <h2 style={{ fontSize: 19, fontWeight: 700, marginBottom: 6 }}>Configuración de empresa</h2>
+      <h2 style={{ fontSize: 19, fontWeight: 600, marginBottom: 6 }}>Configuración de empresa</h2>
       <p style={{ fontSize: 14, color: 'var(--text3)', marginBottom: 28 }}>
         Estos datos aparecen en el encabezado del catálogo PDF.
       </p>
@@ -167,5 +167,5 @@ export default function Settings() {
 
 const labelStyle   = { display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--text2)', marginBottom: 6 }
 const inputStyle   = { width: '100%', padding: '9px 12px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 7, color: 'var(--text)', fontSize: 14, outline: 'none', boxSizing: 'border-box' }
-const btnPrimary   = { padding: '10px 22px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 700, fontSize: 14, cursor: 'pointer', alignSelf: 'flex-start' }
+const btnPrimary   = { padding: '10px 22px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 14, cursor: 'pointer', alignSelf: 'flex-start' }
 const btnSecondary = { padding: '7px 14px', background: 'var(--surface-h)', color: 'var(--text2)', border: '1px solid var(--border)', borderRadius: 7, fontSize: 13, cursor: 'pointer' }

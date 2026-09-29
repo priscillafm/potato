@@ -73,7 +73,7 @@ export default function AdminLayout() {
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: 7, flex: 1 }}>
             <PotatoMark size={18} />
-            <span style={{ fontSize: 13, fontWeight: 700 }}>Admin</span>
+            <span style={{ fontSize: 13, fontWeight: 600 }}>Admin</span>
             <span style={{ fontSize: 12, color: 'var(--text3)', marginLeft: 4 }}>· {company?.name ?? '—'}</span>
           </div>
           <button onClick={() => navigate('/app')} style={{ ...iconBtn, fontSize: 12, padding: '6px 10px', gap: 4 }}>
@@ -99,7 +99,7 @@ export default function AdminLayout() {
           <div style={{ padding: '16px 16px 14px', borderBottom: '1px solid var(--border)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
               <PotatoMark size={22} />
-              <span style={{ fontSize: 14, fontWeight: 700 }}>Potato Admin</span>
+              <span style={{ fontSize: 14, fontWeight: 600 }}>Potato Admin</span>
             </div>
             <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text2)' }}>{company?.name ?? '—'}</div>
           </div>
@@ -162,7 +162,7 @@ export default function AdminLayout() {
         <div style={{ padding: '16px 16px 14px', borderBottom: '1px solid var(--border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <PotatoMark size={22} />
-            <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.01em' }}>Potato</span>
+            <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.01em' }}>Potato</span>
           </div>
           <div style={{ fontSize: 11, color: 'var(--text3)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 3 }}>
             Empresa

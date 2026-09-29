@@ -44,7 +44,7 @@ export default function PricingPage() {
     return {
       display: 'block', width: '100%', padding: '10px', borderRadius: 9,
       background: accent ? 'rgba(0,0,0,0.2)' : 'var(--accent)',
-      color: 'var(--accent-text)', textDecoration: 'none', fontWeight: 700,
+      color: 'var(--accent-text)', textDecoration: 'none', fontWeight: 600,
       fontSize: 13, border: accent ? '1px solid rgba(255,255,255,0.2)' : 'none',
       cursor: 'pointer',
     }
@@ -60,7 +60,7 @@ export default function PricingPage() {
 
       <div style={{ maxWidth: 700, margin: '0 auto', padding: '48px 24px 80px', textAlign: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}><PotatoMark size={40} /></div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, letterSpacing: '-0.5px' }}>Elegí tu plan</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, letterSpacing: '-0.5px' }}>Elegí tu plan</h1>
         <p style={{ fontSize: 15, color: 'var(--text2)', marginBottom: 32 }}>
           Podés cambiar o cancelar cuando quieras.
         </p>

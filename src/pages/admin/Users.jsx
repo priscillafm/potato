@@ -136,7 +136,7 @@ export default function Users() {
   return (
     <div style={{ padding: isMobile ? 16 : 28, overflowY: 'auto', flex: 1 }}>
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10, flexWrap: 'wrap', marginBottom: 6 }}>
-        <h2 style={{ fontSize: 19, fontWeight: 700 }}>Usuarios</h2>
+        <h2 style={{ fontSize: 19, fontWeight: 600 }}>Usuarios</h2>
         <span style={{ fontSize: 13, color: 'var(--text3)' }}>
           {usage.users}/{limits.max_users === null ? '∞' : limits.max_users} usuario{limits.max_users === 1 ? '' : 's'}
         </span>
@@ -151,7 +151,7 @@ export default function Users() {
         borderRadius: 12, padding: 20, marginBottom: 28,
         opacity: canAddUser ? 1 : 0.6,
       }}>
-        <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Crear usuario</h3>
+        <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>Crear usuario</h3>
         {!canAddUser && (
           <p style={{ fontSize: 13, color: '#f97316', marginBottom: 12 }}>
             <span style={{ display: 'inline-flex', verticalAlign: 'middle', marginRight: 6 }}><Icon name="alert" size={14} /></span>Alcanzaste el límite de {limits.max_users} usuario{limits.max_users !== 1 ? 's' : ''} de tu plan.{' '}
@@ -194,7 +194,7 @@ export default function Users() {
           </div>
           <button type="submit" disabled={inviting} style={{
             padding: '9px 22px', background: 'var(--accent)', color: 'var(--accent-text)',
-            border: 'none', borderRadius: 7, fontWeight: 700, cursor: inviting ? 'not-allowed' : 'pointer',
+            border: 'none', borderRadius: 7, fontWeight: 600, cursor: inviting ? 'not-allowed' : 'pointer',
             fontSize: 14, opacity: inviting ? 0.7 : 1,
           }}>
             {inviting ? 'Creando...' : 'Crear usuario'}

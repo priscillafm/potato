@@ -235,7 +235,7 @@ export default function PDFPreviewModal({
         }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 10 }}>
             <div>
-              <h3 style={{ fontSize: isMobile ? 16 : 18, fontWeight: 700 }}>
+              <h3 style={{ fontSize: isMobile ? 16 : 18, fontWeight: 600 }}>
                 {step === 'preview' ? 'Vista previa del catálogo'
                  : step === 'pricing' ? 'Precios (opcional)'
                  : 'Guardar catálogo'}
@@ -504,7 +504,7 @@ export default function PDFPreviewModal({
                   paddingBottom: 10, borderBottom: `2px solid ${displayColor}`
                 }}>
                   <span style={{ width: 12, height: 12, borderRadius: '50%', background: displayColor, flexShrink: 0 }} />
-                  <span style={{ fontWeight: 700, fontSize: 15, color: displayColor }}>{brand.name}</span>
+                  <span style={{ fontWeight: 600, fontSize: 15, color: displayColor }}>{brand.name}</span>
                   <span style={{ fontSize: 13, color: 'var(--text3)' }}>{products.length} producto{products.length !== 1 ? 's' : ''}</span>
                   {isUnbranded && (
                     <label style={{ display: 'flex', alignItems: 'center', gap: 6, marginLeft: 'auto', cursor: 'pointer', fontSize: 13, color: 'var(--text3)' }}>
@@ -528,12 +528,12 @@ export default function PDFPreviewModal({
                         ? <img src={p.image_url} alt="" style={{ width: '100%', aspectRatio: '1', objectFit: 'contain', marginBottom: 8, borderRadius: 4 }} onError={e => { e.target.style.display = 'none' }} />
                         : <div style={{ width: '100%', aspectRatio: '1', background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa', marginBottom: 8, borderRadius: 4 }}><Icon name="image" size={24} /></div>
                       }
-                      <div style={{ display: 'inline-block', padding: '2px 8px', borderRadius: 6, background: displayColor, color: '#fff', fontSize: 10, fontWeight: 700, marginBottom: 5, fontFamily: 'monospace' }}>
+                      <div style={{ display: 'inline-block', padding: '2px 8px', borderRadius: 6, background: displayColor, color: '#fff', fontSize: 10, fontWeight: 600, marginBottom: 5, fontFamily: 'monospace' }}>
                         {p.sku}
                       </div>
                       <div style={{ fontSize: 12, fontWeight: 600, lineHeight: 1.3 }}>{p.name}</div>
                       {prices[p.id]?.amount && (
-                        <div style={{ marginTop: 4, fontSize: 12, color: '#333', fontWeight: 700 }}>
+                        <div style={{ marginTop: 4, fontSize: 12, color: '#333', fontWeight: 600 }}>
                           {prices[p.id].currency} {prices[p.id].amount}
                         </div>
                       )}
@@ -561,7 +561,7 @@ export default function PDFPreviewModal({
               </div>
               {brandGroups.map(({ brand, products }) => (
                 <div key={brand.id} style={{ marginBottom: 24 }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: brand.color, letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 10, paddingBottom: 6, borderBottom: `1px solid ${brand.color}44` }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: brand.color, letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 10, paddingBottom: 6, borderBottom: `1px solid ${brand.color}44` }}>
                     {brand.name}
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -624,7 +624,7 @@ export default function PDFPreviewModal({
                 <button onClick={handleSave} disabled={saving} style={{
                   flex: 2, padding: '10px', borderRadius: 9, cursor: saving ? 'not-allowed' : 'pointer',
                   background: 'var(--accent)', border: 'none', color: 'var(--accent-text)',
-                  fontWeight: 700, fontSize: 14, opacity: saving ? 0.7 : 1,
+                  fontWeight: 600, fontSize: 14, opacity: saving ? 0.7 : 1,
                 }}>
                   {saving ? 'Guardando...' : catalogId ? (catalogStatus === 'shared' ? 'Guardar cambios' : 'Actualizar borrador') : 'Guardar borrador'}
                 </button>
@@ -666,7 +666,7 @@ export default function PDFPreviewModal({
 
               <button onClick={handleDownload} disabled={generating} style={{
                 padding: '8px 22px', background: 'var(--accent)', color: 'var(--accent-text)',
-                border: 'none', borderRadius: 7, fontWeight: 700,
+                border: 'none', borderRadius: 7, fontWeight: 600,
                 cursor: generating ? 'not-allowed' : 'pointer', fontSize: 14,
                 opacity: generating ? 0.7 : 1, transition: 'var(--transition)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
@@ -725,7 +725,7 @@ function CoverPreview({ theme, style, color1, color2, logoUrl, clientName, compa
       <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 110, gap: 3, padding: '10px 14px' }}>
         {logoUrl
           ? <img src={logoUrl} alt="" style={{ height: 22, maxWidth: '80%', objectFit: 'contain' }} onError={e => { e.target.style.display='none' }} />
-          : <span style={{ fontSize: 14, fontWeight: 700, color: textMain, ...ellipsis }}>{companyName ?? 'Empresa'}</span>
+          : <span style={{ fontSize: 14, fontWeight: 600, color: textMain, ...ellipsis }}>{companyName ?? 'Empresa'}</span>
         }
         {showTagline && <span style={{ fontSize: 6.5, letterSpacing: '0.22em', color: textLabel, textTransform: 'uppercase', marginTop: 2 }}>Propuesta Comercial</span>}
         {clientName && <span style={{ fontSize: 9, color: textSub, marginTop: 1, ...ellipsis }}>{clientName}</span>}

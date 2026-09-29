@@ -49,4 +49,4 @@ export default function Terms() {
   )
 }
 
-const h2 = { fontSize: 16, fontWeight: 700, color: 'var(--text)', marginTop: 28, marginBottom: 10 }
+const h2 = { fontSize: 16, fontWeight: 600, color: 'var(--text)', marginTop: 28, marginBottom: 10 }

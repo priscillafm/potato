@@ -47,5 +47,5 @@ export default function Privacy() {
   )
 }
 
-const h2 = { fontSize: 16, fontWeight: 700, color: 'var(--text)', marginTop: 28, marginBottom: 10 }
+const h2 = { fontSize: 16, fontWeight: 600, color: 'var(--text)', marginTop: 28, marginBottom: 10 }
 const ul = { paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 8 }

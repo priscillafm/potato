@@ -83,7 +83,7 @@ export default function Brands() {
 
   return (
     <div style={{ padding: isMobile ? 16 : 28, overflowY: 'auto', flex: 1 }}>
-      <h2 style={{ fontSize: 19, fontWeight: 700, marginBottom: 20 }}>Marcas</h2>
+      <h2 style={{ fontSize: 19, fontWeight: 600, marginBottom: 20 }}>Marcas</h2>
 
       <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
         <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'stretch' : 'center', gap: 10, padding: '14px 16px', borderBottom: '1px solid var(--border)' }}>
@@ -170,7 +170,7 @@ function Modal({ title, onClose, children }) {
     <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.8)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
       <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, width: '100%', maxWidth: 460, maxHeight: '100%', display: 'flex', flexDirection: 'column' }}>
         <div style={{ padding: '18px 20px 14px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
-          <h3 style={{ fontSize: 17, fontWeight: 700 }}>{title}</h3>
+          <h3 style={{ fontSize: 17, fontWeight: 600 }}>{title}</h3>
           <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'var(--text3)', fontSize: 21, cursor: 'pointer' }}>✕</button>
         </div>
         <div style={{ padding: 20, overflowY: 'auto' }}>{children}</div>
@@ -190,6 +190,6 @@ function Field({ label, children }) {
 
 const thStyle = { padding: '10px 14px', textAlign: 'left', fontSize: 11, fontWeight: 600, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '.5px', borderBottom: '1px solid var(--border)', background: 'var(--bg-panel)' }
 const tdStyle = { padding: '10px 14px', borderBottom: '1px solid var(--border)', fontSize: 14, verticalAlign: 'middle' }
-const btnPrimary = { padding: '7px 16px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 6, fontSize: 13, fontWeight: 700, cursor: 'pointer' }
+const btnPrimary = { padding: '7px 16px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 6, fontSize: 13, fontWeight: 600, cursor: 'pointer' }
 const btnSm = { padding: '4px 10px', borderRadius: 5, fontSize: 12, cursor: 'pointer', border: '1px solid var(--border)', background: 'var(--surface-h)', color: 'var(--text2)' }
 const inputStyle = { width: '100%', padding: '8px 12px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 7, color: 'var(--text)', fontSize: 14, outline: 'none' }

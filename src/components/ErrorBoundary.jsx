@@ -21,13 +21,13 @@ export default class ErrorBoundary extends Component {
         justifyContent: 'center', gap: 12, padding: 24, textAlign: 'center',
         background: 'var(--bg)', color: 'var(--text)',
       }}>
-        <h1 style={{ fontSize: 20, fontWeight: 700 }}>Hay una versión nueva de Potato</h1>
+        <h1 style={{ fontSize: 20, fontWeight: 600 }}>Hay una versión nueva de Potato</h1>
         <p style={{ fontSize: 14, color: 'var(--text2)', maxWidth: 360, lineHeight: 1.6 }}>
           Recargá la página para seguir. Tu trabajo guardado no se pierde.
         </p>
         <button onClick={() => window.location.reload()} style={{
           padding: '10px 22px', background: 'var(--accent)', color: 'var(--accent-text)',
-          border: 'none', borderRadius: 10, fontWeight: 700, fontSize: 14, cursor: 'pointer',
+          border: 'none', borderRadius: 10, fontWeight: 600, fontSize: 14, cursor: 'pointer',
         }}>
           Recargar
         </button>

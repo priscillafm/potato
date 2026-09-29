@@ -58,7 +58,7 @@ export default function LoginPage() {
           <div style={{ fontSize: 11, color: 'var(--text3)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6 }}>
             Catálogos comerciales
           </div>
-          <h1 style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.5px', color: 'var(--text)' }}>
+          <h1 style={{ fontSize: 20, fontWeight: 600, letterSpacing: '-0.5px', color: 'var(--text)' }}>
             {mode === 'login' ? 'Bienvenido' : 'Recuperar contraseña'}
           </h1>
         </div>
@@ -146,7 +146,7 @@ function Field({ label, type, value, onChange, autoFocus, style: extraStyle }) {
 const primaryBtn = (loading) => ({
   width: '100%', padding: '11px',
   background: 'var(--accent)', color: 'var(--accent-text)',
-  border: 'none', borderRadius: 9, fontWeight: 700,
+  border: 'none', borderRadius: 9, fontWeight: 600,
   fontSize: 14, cursor: loading ? 'not-allowed' : 'pointer',
   opacity: loading ? 0.7 : 1, transition: 'opacity 0.15s',
   display: 'block',

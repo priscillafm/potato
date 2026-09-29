@@ -44,7 +44,7 @@ export default function PricingCards({ plans, renderCta }) {
             {price.strike != null && (
               <div style={{ fontSize: 13, opacity: 0.6, textDecoration: 'line-through', whiteSpace: 'nowrap' }}>{price.strike}</div>
             )}
-            <div style={{ fontSize: 26, fontWeight: 700, marginBottom: price.sub ? 2 : 12, whiteSpace: 'nowrap' }}>{price.main}</div>
+            <div style={{ fontSize: 26, fontWeight: 600, marginBottom: price.sub ? 2 : 12, whiteSpace: 'nowrap' }}>{price.main}</div>
             {price.sub && (
               <div style={{ fontSize: 11, fontWeight: 600, marginBottom: 16, color: accent ? 'var(--accent-text)' : 'var(--accent)' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}><Icon name="rocket" size={12} /> {price.sub}</span>

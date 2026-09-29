@@ -171,7 +171,7 @@ export default function CatalogPage() {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
               <PotatoMark size={20} />
-              <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--text)', letterSpacing: '-0.01em' }}>Potato</span>
+              <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', letterSpacing: '-0.01em' }}>Potato</span>
             </div>
             <button
               onClick={toggleTheme}
@@ -191,7 +191,7 @@ export default function CatalogPage() {
           <div style={{ fontSize: 11, color: 'var(--text3)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 3 }}>
             {membership?.companies?.name ?? '—'}
           </div>
-          <h1 style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.3px' }}>Catálogos</h1>
+          <h1 style={{ fontSize: 16, fontWeight: 600, letterSpacing: '-0.3px' }}>Catálogos</h1>
         </div>
 
         {/* Brand list */}
@@ -216,7 +216,7 @@ export default function CatalogPage() {
                 <span style={{ fontSize: 14, fontWeight: isActive ? 600 : 400, flex: 1 }}>{brand.name}</span>
                 {count > 0 && (
                   <span style={{
-                    fontSize: 11, fontWeight: 700, padding: '1px 7px', borderRadius: 999,
+                    fontSize: 11, fontWeight: 600, padding: '1px 7px', borderRadius: 999,
                     background: brand.color, color: '#000', flexShrink: 0,
                     animation: 'popIn 0.2s ease',
                   }}>{count}</span>
@@ -238,7 +238,7 @@ export default function CatalogPage() {
                 <span style={{ fontSize: 14, fontWeight: isActive ? 600 : 400, flex: 1 }}>Sin marca</span>
                 {count > 0 && (
                   <span style={{
-                    fontSize: 11, fontWeight: 700, padding: '1px 7px', borderRadius: 999,
+                    fontSize: 11, fontWeight: 600, padding: '1px 7px', borderRadius: 999,
                     background: 'var(--text3)', color: '#000', flexShrink: 0,
                     animation: 'popIn 0.2s ease',
                   }}>{count}</span>
@@ -290,7 +290,7 @@ export default function CatalogPage() {
 
             {activeBrand && (
               <span style={{
-                fontSize: isMobile ? 15 : 15, fontWeight: 700, color: activeBrand.color,
+                fontSize: isMobile ? 15 : 15, fontWeight: 600, color: activeBrand.color,
                 letterSpacing: '-0.3px', flexShrink: 0,
               }}>
                 {activeBrand.name}
@@ -472,7 +472,7 @@ function ProductCard({ product, selected, brandColor, onClick, isMobile }) {
         </div>
         <div style={{
           display: 'inline-block', padding: '3px 9px', borderRadius: 999,
-          fontSize: 10, fontWeight: 700, letterSpacing: '0.04em',
+          fontSize: 10, fontWeight: 600, letterSpacing: '0.04em',
           background: brandColor ?? 'var(--accent)', color: '#fff',
         }}>
           {product.sku}
@@ -504,7 +504,7 @@ function NoProductsYet({ isMobile, isAdmin, navigate }) {
         }}>
           <Icon name="products" size={24} />
         </div>
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Todavía no cargaste productos</h2>
+        <h2 style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Todavía no cargaste productos</h2>
         <p style={{ fontSize: 14, color: 'var(--text3)', lineHeight: 1.5, marginBottom: 22 }}>
           {isAdmin
             ? 'Para armar un catálogo primero necesitás algunos productos. Podés cargarlos uno por uno o subir un Excel con todos de una vez.'
@@ -514,7 +514,7 @@ function NoProductsYet({ isMobile, isAdmin, navigate }) {
           <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: 10, justifyContent: 'center' }}>
             <button onClick={() => navigate('/admin/products')} style={{
               padding: '10px 20px', background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 9, fontWeight: 700, fontSize: 14, cursor: 'pointer',
+              border: 'none', borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: 'pointer',
             }}>
               + Agregar productos
             </button>
@@ -541,7 +541,7 @@ function CatalogInstructions({ isMobile }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: isMobile ? 'flex-start' : 'center', height: '100%', minHeight: 240, padding: isMobile ? '24px 4px 0' : '0 48px' }}>
       <div style={{ maxWidth: 480, width: '100%' }}>
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: isMobile ? 16 : 20 }}>
+        <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: isMobile ? 16 : 20 }}>
           {isMobile ? 'Tocá una marca para empezar' : 'Cómo armar tu catálogo'}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -551,7 +551,7 @@ function CatalogInstructions({ isMobile }) {
                 width: 26, height: 26, borderRadius: '50%', flexShrink: 0,
                 background: 'var(--accent)', color: 'var(--accent-text)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: 12, fontWeight: 700,
+                fontSize: 12, fontWeight: 600,
               }}>{s.n}</div>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', marginBottom: 2 }}>{s.title}</div>

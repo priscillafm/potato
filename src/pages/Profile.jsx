@@ -90,16 +90,16 @@ export default function ProfilePage() {
               width: 48, height: 48, borderRadius: '50%',
               background: 'var(--accent)', color: 'var(--accent-text)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: 20, fontWeight: 700, flexShrink: 0,
+              fontSize: 20, fontWeight: 600, flexShrink: 0,
             }}>
               {(user?.name ?? user?.email ?? '?')[0].toUpperCase()}
             </div>
             <div>
-              <div style={{ fontWeight: 700, fontSize: 16 }}>{user?.name ?? user?.email}</div>
+              <div style={{ fontWeight: 600, fontSize: 16 }}>{user?.name ?? user?.email}</div>
               <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 2 }}>{user?.email}</div>
               <span style={{
                 display: 'inline-block', marginTop: 5, padding: '2px 8px', borderRadius: 999,
-                fontSize: 10, fontWeight: 700, background: 'var(--surface-h)', color: 'var(--text2)',
+                fontSize: 10, fontWeight: 600, background: 'var(--surface-h)', color: 'var(--text2)',
               }}>
                 {ROLE_LABELS[membership?.role] ?? membership?.role}
               </span>
@@ -113,7 +113,7 @@ export default function ProfilePage() {
 
         {/* WhatsApp */}
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '24px 28px', boxShadow: 'var(--shadow)', marginBottom: 16 }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>WhatsApp de ventas</h2>
+          <h2 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>WhatsApp de ventas</h2>
           <p style={{ fontSize: 12, color: 'var(--text3)', marginBottom: 18 }}>
             Los clientes te contactarán a este número cuando armen un pedido desde el catálogo.
           </p>
@@ -122,7 +122,7 @@ export default function ProfilePage() {
             {wappMsg && <p style={{ fontSize: 12, color: wappMsg === 'Guardado' ? 'var(--success)' : 'var(--danger)', marginBottom: 10 }}>{wappMsg === 'Guardado' ? '✓ ' : ''}{wappMsg}</p>}
             <button type="submit" disabled={wappSaving} style={{
               width: '100%', padding: '10px', background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 9, fontWeight: 700, fontSize: 13,
+              border: 'none', borderRadius: 9, fontWeight: 600, fontSize: 13,
               cursor: wappSaving ? 'not-allowed' : 'pointer', opacity: wappSaving ? 0.7 : 1,
             }}>
               {wappSaving ? 'Guardando...' : 'Guardar WhatsApp'}
@@ -132,7 +132,7 @@ export default function ProfilePage() {
 
         {/* Notification preferences */}
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '24px 28px', boxShadow: 'var(--shadow)', marginBottom: 16 }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Notificaciones</h2>
+          <h2 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>Notificaciones</h2>
           <p style={{ fontSize: 12, color: 'var(--text3)', marginBottom: 16 }}>
             Elegí qué te avisa la campanita.{prefsSaving ? ' Guardando...' : ''}
           </p>
@@ -151,7 +151,7 @@ export default function ProfilePage() {
 
         {/* Change password */}
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '24px 28px', boxShadow: 'var(--shadow)' }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 18 }}>Cambiar contraseña</h2>
+          <h2 style={{ fontSize: 15, fontWeight: 600, marginBottom: 18 }}>Cambiar contraseña</h2>
           <form onSubmit={handleChangePassword}>
             <Field label="Contraseña actual" type="password" value={currentPass} onChange={e => setCurrentPass(e.target.value)} />
             <Field label="Nueva contraseña" type="password" value={newPass} onChange={e => setNewPass(e.target.value)} />
@@ -162,7 +162,7 @@ export default function ProfilePage() {
 
             <button type="submit" disabled={loading} style={{
               width: '100%', padding: '10px', background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 9, fontWeight: 700, fontSize: 13,
+              border: 'none', borderRadius: 9, fontWeight: 600, fontSize: 13,
               cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1,
             }}>
               {loading ? 'Guardando...' : 'Actualizar contraseña'}
@@ -172,7 +172,7 @@ export default function ProfilePage() {
 
         {/* Datos y privacidad */}
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: '24px 28px', marginTop: 12, boxShadow: 'var(--shadow)' }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>Datos y privacidad</h2>
+          <h2 style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>Datos y privacidad</h2>
           <p style={{ fontSize: 12, color: 'var(--text3)', lineHeight: 1.6, marginBottom: 14 }}>
             Si querés eliminar tu cuenta y los datos asociados, envianos la solicitud y la procesamos dentro de los 30 días. Tus catálogos públicos dejan de estar disponibles.
           </p>

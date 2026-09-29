@@ -161,7 +161,7 @@ export default function Sync() {
 
   return (
     <div style={{ padding: isMobile ? 16 : 28, overflowY: 'auto', flex: 1 }}>
-      <h2 style={{ fontSize: 19, fontWeight: 700, marginBottom: 6 }}>Sincronizar stock y precios</h2>
+      <h2 style={{ fontSize: 19, fontWeight: 600, marginBottom: 6 }}>Sincronizar stock y precios</h2>
       <p style={{ color: 'var(--text2)', fontSize: 14, marginBottom: 6 }}>
         Usá esto para <strong>actualizar</strong> productos que ya cargaste (stock, precio, etc.). Subí tu Excel y el sistema compara cada fila con lo que ya está guardado antes de aplicar cambios — vos decidís qué aplicar. Los datos que tu Excel no trae no se modifican, y los productos que no estén en el archivo <strong>no se eliminan</strong> salvo que los incluyas vos.
       </p>
@@ -286,7 +286,7 @@ export default function Sync() {
             <button onClick={handleApply} disabled={actionable.length === 0}
               style={{
                 padding: '9px 24px', background: 'var(--accent)', color: 'var(--accent-text)',
-                border: 'none', borderRadius: 7, fontWeight: 700, cursor: 'pointer', fontSize: 15,
+                border: 'none', borderRadius: 7, fontWeight: 600, cursor: 'pointer', fontSize: 15,
                 opacity: actionable.length === 0 ? 0.5 : 1,
               }}>
               Aplicar {plural(actionable.length, 'cambio')}
@@ -298,10 +298,10 @@ export default function Sync() {
       {step === STEPS.done && (
         <div style={{ textAlign: 'center', padding: '40px 0' }}>
           <div style={{ marginBottom: 12, display: 'flex', justifyContent: 'center', color: '#22c55e' }}><Icon name="check-circle" size={40} /></div>
-          <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Sincronización completada</h3>
+          <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 8 }}>Sincronización completada</h3>
           <p style={{ color: 'var(--text2)', marginBottom: 20, fontSize: 14 }}>{message}</p>
           <button onClick={() => { setStep(STEPS.idle); setDiffRows([]); setSummary(null); setMessage('') }}
-            style={{ padding: '9px 20px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 700, cursor: 'pointer' }}>
+            style={{ padding: '9px 20px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 7, fontWeight: 600, cursor: 'pointer' }}>
             Nueva sincronización
           </button>
         </div>

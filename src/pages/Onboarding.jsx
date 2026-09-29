@@ -146,7 +146,7 @@ export default function OnboardingPage() {
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 32, justifyContent: 'center' }}>
           <PotatoMark size={24} />
-          <span style={{ fontSize: 16, fontWeight: 700, color: 'var(--text)' }}>Potato</span>
+          <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--text)' }}>Potato</span>
         </div>
 
         {/* Progress */}
@@ -169,7 +169,7 @@ export default function OnboardingPage() {
           {step === 1 && (
             <div style={{ textAlign: 'center' }}>
               <div style={{ marginBottom: 16, color: 'var(--accent)' }}><Icon name="welcome" size={48} /></div>
-              <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 10 }}>
+              <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 10 }}>
                 Bienvenido a Potato
               </h1>
               <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.6, marginBottom: 28 }}>
@@ -186,7 +186,7 @@ export default function OnboardingPage() {
           {/* Step 2 — Empresa + WhatsApp */}
           {step === 2 && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Tu empresa</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>Tu empresa</h2>
               <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 24 }}>
                 Estos datos aparecen en tus catálogos y en los pedidos de tus clientes.
               </p>
@@ -208,7 +208,7 @@ export default function OnboardingPage() {
           {/* Step 3 — Marca */}
           {step === 3 && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Tu primera marca <span style={{ fontSize: 12, fontWeight: 400, color: 'var(--text3)' }}>(opcional)</span></h2>
+              <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>Tu primera marca <span style={{ fontSize: 12, fontWeight: 400, color: 'var(--text3)' }}>(opcional)</span></h2>
               <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 24 }}>
                 La marca es el proveedor o la línea a la que pertenecen tus productos (tu empresa ya está creada). Si vendés de varias marcas, organizalos así; si no, dejalo en blanco.
               </p>
@@ -242,7 +242,7 @@ export default function OnboardingPage() {
           {/* Step 4 — Producto */}
           {step === 4 && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>Tu primer producto</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>Tu primer producto</h2>
               <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 24 }}>
                 Solo lo básico. Después podés cargar todos desde un Excel.
               </p>
@@ -266,7 +266,7 @@ export default function OnboardingPage() {
           {step === 5 && (
             <div style={{ textAlign: 'center' }}>
               <div style={{ marginBottom: 16, color: 'var(--accent)' }}><Icon name="celebrate" size={48} /></div>
-              <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 10 }}>
+              <h2 style={{ fontSize: 22, fontWeight: 600, marginBottom: 10 }}>
                 ¡Todo listo!
               </h2>
               <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.6, marginBottom: 28 }}>
@@ -319,7 +319,7 @@ const labelStyle = {
 const primaryBtn = {
   width: '100%', padding: '12px', background: 'var(--accent)',
   color: 'var(--accent-text)', border: 'none', borderRadius: 10,
-  fontWeight: 700, fontSize: 14, cursor: 'pointer', display: 'block',
+  fontWeight: 600, fontSize: 14, cursor: 'pointer', display: 'block',
 }
 const skipBtn = {
   width: '100%', marginTop: 10, padding: '10px',

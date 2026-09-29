@@ -124,7 +124,7 @@ export default function Dashboard() {
 
       {/* Greeting */}
       <div style={{ marginBottom: 24 }}>
-        <h2 style={{ fontSize: 21, fontWeight: 700, marginBottom: 4 }}>
+        <h2 style={{ fontSize: 21, fontWeight: 600, marginBottom: 4 }}>
           Hola, {authUser?.name ?? membership?.companies?.name ?? 'bienvenido'}
         </h2>
         <p style={{ fontSize: 14, color: 'var(--text3)' }}>
@@ -136,10 +136,10 @@ export default function Dashboard() {
       {readinessItems && (
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '16px 20px', marginBottom: 24 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: readyCount === readinessItems.length ? 0 : 12 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               {readyCount === readinessItems.length ? 'Tu catálogo está listo para recibir pedidos' : 'Preparación de tu catálogo'}
             </span>
-            <span style={{ fontSize: 13, fontWeight: 700, color: readyCount === readinessItems.length ? '#22c55e' : 'var(--text2)' }}>{readyCount} de {readinessItems.length}</span>
+            <span style={{ fontSize: 13, fontWeight: 600, color: readyCount === readinessItems.length ? '#22c55e' : 'var(--text2)' }}>{readyCount} de {readinessItems.length}</span>
           </div>
           {readyCount !== readinessItems.length && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -178,8 +178,8 @@ export default function Dashboard() {
       }}>
         <div style={{ flex: 1, minWidth: 200 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Plan</span>
-            <span style={{ fontSize: 12, fontWeight: 700, padding: '2px 8px', borderRadius: 999, background: `${planColor}20`, color: planColor, textTransform: 'capitalize' }}>
+            <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Plan</span>
+            <span style={{ fontSize: 12, fontWeight: 600, padding: '2px 8px', borderRadius: 999, background: `${planColor}20`, color: planColor, textTransform: 'capitalize' }}>
               {plan}
             </span>
           </div>
@@ -220,7 +220,7 @@ export default function Dashboard() {
             <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 8 }}>Más productos,<br />más catálogos</p>
             <button onClick={() => navigate('/pricing')} style={{
               padding: '8px 16px', background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer',
+              border: 'none', borderRadius: 8, fontWeight: 600, fontSize: 13, cursor: 'pointer',
             }}>
               Ver planes →
             </button>
@@ -231,7 +231,7 @@ export default function Dashboard() {
       {/* Top catalogs by views */}
       <div style={{ marginBottom: 24 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-          <h3 style={{ fontSize: 15, fontWeight: 700 }}>Catálogos más vistos</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 600 }}>Catálogos más vistos</h3>
           <button onClick={() => navigate('/catalogs')} style={linkBtn}>Ver todos →</button>
         </div>
 
@@ -245,7 +245,7 @@ export default function Dashboard() {
                 borderRadius: 10, padding: '12px 16px',
                 display: 'flex', alignItems: 'center', gap: 12,
               }}>
-                <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--text3)', width: 18, flexShrink: 0 }}>
+                <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--text3)', width: 18, flexShrink: 0 }}>
                   #{i + 1}
                 </span>
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -258,7 +258,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                  <div style={{ fontSize: 19, fontWeight: 800, fontVariantNumeric: 'tabular-nums', color: cat.viewCount > 0 ? 'var(--accent)' : 'var(--text3)' }}>
+                  <div style={{ fontSize: 19, fontWeight: 700, fontVariantNumeric: 'tabular-nums', color: cat.viewCount > 0 ? 'var(--accent)' : 'var(--text3)' }}>
                     {cat.viewCount}
                   </div>
                   <div style={{ fontSize: 11, color: 'var(--text3)' }}>vista{cat.viewCount !== 1 ? 's' : ''}</div>
@@ -272,7 +272,7 @@ export default function Dashboard() {
 
       {/* Quick actions */}
       <div>
-        <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12 }}>Acciones rápidas</h3>
+        <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>Acciones rápidas</h3>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           <QuickAction icon="document" label="Nuevo catálogo" onClick={() => navigate('/app')} primary />
           <QuickAction icon="products"  label="Ver productos"  onClick={() => navigate('/admin/products')} />
@@ -299,7 +299,7 @@ function StatCard({ label, value, sub, icon, accent, onClick }) {
         <Icon name={icon} size={15} color="var(--text3)" />
         <span style={{ fontSize: 12, color: 'var(--text3)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</span>
       </div>
-      <div style={{ fontSize: 33, fontWeight: 800, fontVariantNumeric: 'tabular-nums', lineHeight: 1, color: accent ? 'var(--accent)' : 'var(--text)' }}>
+      <div style={{ fontSize: 33, fontWeight: 700, fontVariantNumeric: 'tabular-nums', lineHeight: 1, color: accent ? 'var(--accent)' : 'var(--text)' }}>
         {value}
       </div>
       {sub && <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 6 }}>{sub}</div>}
@@ -329,7 +329,7 @@ function StatusBadge({ status }) {
   const map = { shared: ['Activo', '#22c55e'], generated: ['Generado', '#3b82f6'], draft: ['Borrador', 'var(--text3)'] }
   const [label, color] = map[status] ?? map.draft
   return (
-    <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 999, background: `${color}20`, color, flexShrink: 0 }}>
+    <span style={{ fontSize: 11, fontWeight: 600, padding: '2px 8px', borderRadius: 999, background: `${color}20`, color, flexShrink: 0 }}>
       {label}
     </span>
   )

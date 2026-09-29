@@ -29,7 +29,7 @@ export default function LandingPage() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
           <PotatoMark size={26} />
-          <span style={{ fontSize: 18, fontWeight: 800, letterSpacing: '-0.5px' }}>Potato</span>
+          <span style={{ fontSize: 18, fontWeight: 700, letterSpacing: '-0.5px' }}>Potato</span>
         </div>
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <Link to="/login" style={navLink}>Ingresar</Link>
@@ -57,14 +57,14 @@ export default function LandingPage() {
             display: 'inline-block', padding: '5px 14px', borderRadius: 999,
             background: 'color-mix(in srgb, var(--violet) 15%, transparent)',
             border: '1px solid color-mix(in srgb, var(--violet) 30%, transparent)',
-            color: 'var(--violet)', fontSize: 12, fontWeight: 700,
+            color: 'var(--violet)', fontSize: 12, fontWeight: 600,
             letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 24,
           }}>
             Para distribuidores y mayoristas
           </div>
           <h1 style={{
             fontFamily: "'Space Grotesk', var(--font)", fontSize: 'clamp(32px, 6vw, 54px)',
-            fontWeight: 700, lineHeight: 1.1, letterSpacing: '-1.5px', marginBottom: 20,
+            fontWeight: 600, lineHeight: 1.1, letterSpacing: '-1.5px', marginBottom: 20,
           }}>
             Catálogos profesionales<br />
             <span style={{
@@ -184,7 +184,7 @@ export default function LandingPage() {
                 display: 'block', padding: '10px', borderRadius: 9,
                 background: accent ? 'rgba(0,0,0,0.2)' : 'var(--accent)',
                 color: 'var(--accent-text)',
-                textDecoration: 'none', fontWeight: 700, fontSize: 13,
+                textDecoration: 'none', fontWeight: 600, fontSize: 13,
                 border: accent ? '1px solid rgba(255,255,255,0.2)' : 'none',
               }}>
                 {p.name === 'free' ? 'Empezar gratis' : p.name === 'enterprise' ? 'Contactar' : 'Empezar Pro'}
@@ -239,7 +239,7 @@ const navLink = {
 }
 const ctaBtn = {
   background: 'var(--accent)', color: 'var(--accent-text)',
-  textDecoration: 'none', fontWeight: 700, fontSize: 13,
+  textDecoration: 'none', fontWeight: 600, fontSize: 13,
   padding: '9px 18px', borderRadius: 9, display: 'inline-block',
 }
 

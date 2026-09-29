@@ -83,7 +83,7 @@ export default function RegisterPage() {
         {/* Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 32, justifyContent: 'center' }}>
           <PotatoMark size={28} />
-          <span style={{ fontSize: 20, fontWeight: 700, color: 'var(--text)' }}>Potato</span>
+          <span style={{ fontSize: 20, fontWeight: 600, color: 'var(--text)' }}>Potato</span>
         </div>
 
         {/* Card */}
@@ -102,7 +102,7 @@ export default function RegisterPage() {
             ))}
           </div>
 
-          <h1 style={{ fontSize: 20, fontWeight: 700, marginBottom: 6 }}>
+          <h1 style={{ fontSize: 20, fontWeight: 600, marginBottom: 6 }}>
             {step === 1 ? 'Creá tu cuenta' : 'Nombre de tu empresa'}
           </h1>
           <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 24 }}>
@@ -147,7 +147,7 @@ export default function RegisterPage() {
             <button type="submit" disabled={loading} style={{
               width: '100%', padding: '12px',
               background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 10, fontWeight: 700, fontSize: 14,
+              border: 'none', borderRadius: 10, fontWeight: 600, fontSize: 14,
               cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1,
               marginTop: 4,
             }}>

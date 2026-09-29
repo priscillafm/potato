@@ -40,12 +40,12 @@ export default function ContactPage() {
       <nav style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '16px 32px', borderBottom: '1px solid var(--border)' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 9, textDecoration: 'none', color: 'var(--text)' }}>
           <PotatoMark size={24} />
-          <span style={{ fontSize: 16, fontWeight: 800 }}>Potato</span>
+          <span style={{ fontSize: 16, fontWeight: 700 }}>Potato</span>
         </Link>
       </nav>
 
       <div style={{ maxWidth: 520, margin: '0 auto', padding: '48px 24px 80px' }}>
-        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Contacto</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Contacto</h1>
         <p style={{ fontSize: 14, color: 'var(--text2)', marginBottom: 28, lineHeight: 1.6 }}>
           {deletion
             ? 'Confirmá el email de tu cuenta y enviá la solicitud: la procesamos dentro de los 30 días.'
@@ -59,7 +59,7 @@ export default function ContactPage() {
             <div style={{ display: 'flex', justifyContent: 'center', color: 'var(--success)', marginBottom: 12 }}>
               <Icon name="check-circle" size={36} />
             </div>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>¡Consulta enviada!</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 6 }}>¡Consulta enviada!</h2>
             <p style={{ fontSize: 13, color: 'var(--text2)', marginBottom: 20 }}>Te respondemos al email que dejaste.</p>
             <Link to="/" style={{ color: 'var(--accent)', fontSize: 13, fontWeight: 600, textDecoration: 'none' }}>← Volver al inicio</Link>
           </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
             <button type="submit" disabled={sending} style={{
               width: '100%', padding: '12px', background: 'var(--accent)', color: 'var(--accent-text)',
-              border: 'none', borderRadius: 10, fontWeight: 700, fontSize: 14,
+              border: 'none', borderRadius: 10, fontWeight: 600, fontSize: 14,
               cursor: sending ? 'not-allowed' : 'pointer', opacity: sending ? 0.7 : 1, transition: 'var(--transition)',
             }}>
               {sending ? 'Enviando...' : 'Enviar consulta'}

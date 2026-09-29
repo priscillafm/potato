@@ -28,7 +28,7 @@ export default function ResetPasswordPage() {
         background: 'var(--surface)', border: '1px solid var(--border)',
         borderRadius: 16, padding: '36px 32px', width: 380, boxShadow: 'var(--shadow)',
       }}>
-        <h1 style={{ fontSize: 20, fontWeight: 700, marginBottom: 6 }}>Nueva contraseña</h1>
+        <h1 style={{ fontSize: 20, fontWeight: 600, marginBottom: 6 }}>Nueva contraseña</h1>
         <p style={{ fontSize: 13, color: 'var(--text3)', marginBottom: 24 }}>Elegí una contraseña segura.</p>
 
         {done ? (
@@ -61,4 +61,4 @@ export default function ResetPasswordPage() {
 
 const labelStyle = { display: 'block', fontSize: 11, color: 'var(--text3)', marginBottom: 6, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }
 const inputStyle = { width: '100%', padding: '10px 13px', background: 'var(--bg-panel)', border: '1px solid var(--border)', borderRadius: 9, color: 'var(--text)', fontSize: 14, outline: 'none' }
-const primaryBtn = { width: '100%', padding: '11px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 9, fontWeight: 700, fontSize: 14, cursor: 'pointer', display: 'block' }
+const primaryBtn = { width: '100%', padding: '11px', background: 'var(--accent)', color: 'var(--accent-text)', border: 'none', borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: 'pointer', display: 'block' }

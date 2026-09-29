@@ -55,7 +55,7 @@ export default function Guide() {
     <div style={{ flex: 1, overflowY: 'auto', padding: '28px 32px 60px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginBottom: 6 }}>
-          <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>Guía de uso</h1>
+          <h1 style={{ fontSize: 22, fontWeight: 600, margin: 0 }}>Guía de uso</h1>
           <button onClick={startTour} style={btnSecondary}>
             ↻ Repasar el recorrido guiado
           </button>
@@ -72,9 +72,9 @@ export default function Guide() {
                   width: 24, height: 24, borderRadius: '50%', flexShrink: 0,
                   background: 'var(--accent)', color: 'var(--accent-text)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 12, fontWeight: 700,
+                  fontSize: 12, fontWeight: 600,
                 }}>{i + 1}</span>
-                <h2 style={{ fontSize: 16, fontWeight: 700, margin: 0 }}>{s.title}</h2>
+                <h2 style={{ fontSize: 16, fontWeight: 600, margin: 0 }}>{s.title}</h2>
               </div>
               <p style={{ fontSize: 14, color: 'var(--text2)', lineHeight: 1.55, margin: '0 0 14px 34px' }}>{s.text}</p>
               <div style={{ marginLeft: 34, border: '1px solid var(--border)', borderRadius: 10, overflow: 'hidden', background: 'var(--surface)' }}>
