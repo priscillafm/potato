@@ -67,14 +67,6 @@ Deno.serve(async (req) => {
     const validSignature = await verifySignature(req, String(dataId))
     if (!validSignature) return json({ error: 'Firma inválida' }, 401)
 
-    const eventId = `payment:${dataId}`
-    const { data: existing } = await admin
-      .from('payment_events')
-      .select('id')
-      .eq('mp_event_id', eventId)
-      .maybeSingle()
-    if (existing) return json({ ok: true }) // ya procesado, idempotente
-
     const paymentRes = await fetch(`https://api.mercadopago.com/v1/payments/${dataId}`, {
       headers: { Authorization: `Bearer ${mpToken}` },
     })
@@ -83,6 +75,16 @@ Deno.serve(async (req) => {
       console.error('No se pudo leer el pago de MP:', payment)
       return json({ error: 'No se pudo verificar el pago' }, 502)
     }
+
+    // Un mismo pago puede notificarse varias veces con distinto estado (aprobado y
+    // después devuelto), así que el estado forma parte de la clave de idempotencia.
+    const eventId = `payment:${dataId}:${payment.status}`
+    const { data: existing } = await admin
+      .from('payment_events')
+      .select('id')
+      .eq('mp_event_id', eventId)
+      .maybeSingle()
+    if (existing) return json({ ok: true }) // ya procesado, idempotente
 
     const [companyId, planId] = String(payment.external_reference ?? '').split(':')
 
@@ -107,6 +109,21 @@ Deno.serve(async (req) => {
       }).eq('company_id', companyId)
 
       await admin.from('companies').update({ plan: 'pro' }).eq('id', companyId)
+    } else if (companyId && ['refunded', 'charged_back'].includes(payment.status)) {
+      // Pago devuelto o desconocido por el cliente: vuelve a Free, pero solo si es
+      // el pago que sostiene la suscripción actual (no uno viejo ya renovado).
+      const { data: sub } = await admin
+        .from('company_subscriptions')
+        .select('external_id')
+        .eq('company_id', companyId)
+        .maybeSingle()
+      if (sub?.external_id === String(payment.id)) {
+        await admin.from('company_subscriptions').update({
+          status: 'cancelled',
+          cancelled_at: new Date().toISOString(),
+        }).eq('company_id', companyId)
+        await admin.from('companies').update({ plan: 'free' }).eq('id', companyId)
+      }
     } else if (companyId && ['rejected', 'cancelled'].includes(payment.status)) {
       await admin.from('company_subscriptions').update({ status: 'past_due' }).eq('company_id', companyId)
     }
