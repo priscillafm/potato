@@ -93,7 +93,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         items: [{
-          title: `Potato — Plan ${plan.name}${usdPrice ? ` (US$ ${usdPrice}/mes)` : ''}`,
+          title: `Potato — Plan ${plan.name}${usdPrice ? ` (US$ ${usdPrice} por mes)` : ''}`,
           quantity: 1,
           currency_id: 'UYU',
           unit_price: amount,
